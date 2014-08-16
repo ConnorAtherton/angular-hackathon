@@ -1,0 +1,14 @@
+header.accounts {
+  // border-bottom: 1px solid #DFDFDF;
+  padding: 15px 0;
+}
+
+.account {
+  padding: 13px 0;
+  border-bottom: 1px solid #dfdfdf;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #f9f9f9;
+  }
+}

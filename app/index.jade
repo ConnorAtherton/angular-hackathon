@@ -1,0 +1,12 @@
+doctype html
+html(lang="en", ng-app="nghack")
+  head
+    title(ng-bind="pageTitle") Angular hackathon
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href="/css/vendor.css")
+  body(ng-controller='AppCtrl')
+    login-toolbar
+    section(ui-view class="container")
+    script(src="/js/bundle.js")
+

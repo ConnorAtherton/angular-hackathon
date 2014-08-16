@@ -1,0 +1,57 @@
+form.form-horizontal {
+  label {
+    padding: 7px 0 3px 0;
+    text-align: left;
+  }
+
+  input {
+    border-radius: 3px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #333;
+    border: 1px solid #d8d9d9;
+    box-shadow: none;
+    @extend .small-type;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  span {
+    display: block;
+  }
+
+  .error {
+    color: #E85A5A;
+    font-size: 12px;
+    padding: 3px 0 0 0;
+  }
+
+  .errorMessage {
+    @extend .error;
+    margin: 12px 0;
+  }
+
+  .control-label {
+    padding: 7px 0 3px 0;
+  }
+
+  .ng-dirty {
+    border: 1px solid #e85a5a;
+  }
+
+  .ng-valid {
+    border: 1px solid #d8d9d9;
+  }
+}
+
+// Login specific styling
+
+.forgottenPassword {
+  margin-top: 8px;
+  display: inline-block;
+  font-size: 13px;
+  // line-height: 100%;
+  vertical-align: middle;
+}

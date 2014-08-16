@@ -1,0 +1,7 @@
+# directories to be ignored
+node_modules/*
+vendor/*
+
+# api keys
+# config/api.js
+

@@ -1,0 +1,30 @@
+@import "config/colours";
+@import "components/social_buttons";
+
+@import "partials/navbar";
+@import "partials/grid";
+@import "partials/tabs";
+@import "partials/buttons";
+@import "partials/type";
+@import "partials/forms";
+
+@import "partials/console";
+@import "partials/accounts";
+@import "partials/options";
+
+.centered {
+  float: none !important;
+  margin: 0 auto;
+}
+
+#no-instances, .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+.gravatar {
+  border-radius: 3px;
+}
+

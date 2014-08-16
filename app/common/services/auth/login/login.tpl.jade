@@ -1,0 +1,21 @@
+section.login.col-5-12.centered
+  h5(ng-bind="getLoginReason()")
+  form.form-horizontal(ng-submit="login()", name="loginForm", role="form")
+
+    label.control-label.col-sm-2.hide(for="email") Email
+    input.form-control(ng-model="user.email", ng-model-options="{ updateOn: 'blur' }", name='email', type="email" placeholder="Email", required, autofocus="true")
+    span.error(ng-show='loginForm.email.$error.email && !loginForm.email.$pristine') Please enter a valid email.
+
+    label.control-label.col-sm-2.hide(for="password") Password
+    input.form-control(ng-model="user.password", ng-model-options="{ updateOn: 'blur' }", type="password", name='password', ng-minlength="6", placeholder="Password", required)
+    span.error(ng-show='loginForm.password.$error.minlength') Your password must be greater than 6 characters.
+
+    p.errorMessage(ng-bind="message")
+    footer.submit.clearfix
+        button.btn.btn-default.pull-left(type="submit", ng-disabled="loginForm.$invalid") Log in
+        a(href='#').forgottenPassword.pull-right Forgotten your password?
+
+  .btn.btn-facebook.btn-full(ng-click='loginWith("facebook")') Login with facebook
+  .btn.btn-twitter.btn-full(ng-click='loginWith("twitter")') Login with twitter
+  .btn.btn-google.btn-full(ng-click='loginWith("google")') Login with google
+

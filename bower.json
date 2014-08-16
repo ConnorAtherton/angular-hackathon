@@ -1,0 +1,32 @@
+{
+  "name": "bitnamo",
+  "version": "0.0.1",
+  "authors": [
+    "Connor Atherton <c.liam.atherton@gmail.com>"
+  ],
+  "description": "Bitnami node angular cloud launchpad",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2",
+    "angular-mocks": "~1.2",
+    "bootstrap": "~3.1",
+    "angular-bootstrap": "~0.11.0",
+    "angular-ui-router": "~0.2",
+    "angular-resource": "~1.2.21",
+    "angular-loading-bar": "~0.5.0"
+  },
+  "resolutions": {
+    "angular": ">= 1.0.8"
+  }
+}
