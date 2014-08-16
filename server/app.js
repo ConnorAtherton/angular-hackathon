@@ -39,7 +39,6 @@ app.use(passport.session());
 //
 require('./routes/auth').addRoutes(app, config);
 require('./routes/oauth').addRoutes(app, config);
-require('./routes/api').addRoutes(app, config);
 require('./routes/static').addRoutes(app, config);
 require('./routes/404').addRoutes(app, config);
 

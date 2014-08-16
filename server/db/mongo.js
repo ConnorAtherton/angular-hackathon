@@ -27,8 +27,11 @@ var Mongo = {
 
   // each collection should be attached to the Mongo object
   // so its schema can be used for querying
+  //
+  // THOUGHT
+  // Does this need to be here? We can just query from it dierctly.
+  //
   User: require('./models/user'),
-  Account: require('./models/account'),
 
 }
 

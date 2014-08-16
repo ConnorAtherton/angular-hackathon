@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
-var Account = require('./account');
 var Schema = mongoose.Schema;
 
 var User = new Schema({
@@ -11,18 +10,6 @@ var User = new Schema({
   password: String,
   fullName: String,
   joinDate: Date,
-  defaultAccount: {
-    type: Schema.Types.ObjectId,
-    ref: 'Account'
-  },
-  accounts: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Account'
-  }],
-  date: {
-    type: Date,
-    default: Date.now
-  },
   facebook: {
     id: String,
     token: String,
