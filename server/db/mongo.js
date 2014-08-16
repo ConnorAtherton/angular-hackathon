@@ -33,6 +33,6 @@ var Mongo = {
   //
   User: require('./models/user'),
 
-}
+};
 
 module.exports = Mongo;

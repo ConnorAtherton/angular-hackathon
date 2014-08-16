@@ -12,7 +12,7 @@ module.exports = function() {
         token: token,
         tokenSecret: tokenSecret,
         profile: profile
-      }
+      };
 
       Mongo.User.findOne({
         'twitter.id': profile.id
@@ -52,10 +52,10 @@ module.exports = function() {
               return done(err, newUser);
             });
           });
-        };
+        }
       });
     });
-}
+};
 
 //
 // Private
@@ -80,7 +80,7 @@ function _saveTwitterUser(opts, cb, existing) {
   // Look at _json for any more information to save to db.
   // We'll just store this for now.
   user.twitter.location = opts.profile._json.location;
-  user.twitter.picture = opts.profile._json.profile_image_url
+  user.twitter.picture = opts.profile._json.profile_image_url;
 
   user.save(function(err) {
     if (err) return cb(err);

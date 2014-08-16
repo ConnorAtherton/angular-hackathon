@@ -22,16 +22,16 @@ function verify(email, password, done) {
       return done(null, user);
     });
   });
-};
+}
 
 function serializeUser(user, done) {
   done(null, user._id);
-};
+}
 
 function deserializeUser(id, done) {
   Mongo.User.findById(id, function(err, user) {
     return done(err, user);
   });
-};
+}
 
 module.exports.Strategy = DatabaseStrategy;

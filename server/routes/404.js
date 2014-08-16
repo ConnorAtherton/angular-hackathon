@@ -6,4 +6,4 @@ exports.addRoutes = function(app, config) {
     res.sendfile(config.dist + '/index.html');
   });
 
-}
+};

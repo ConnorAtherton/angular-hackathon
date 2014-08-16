@@ -11,4 +11,4 @@ exports.addRoutes = function(app, config) {
 
   app.get('/current-user', auth.sendCurrentUser);
 
-}
+};

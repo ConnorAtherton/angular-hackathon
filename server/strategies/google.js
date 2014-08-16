@@ -7,12 +7,12 @@ module.exports = function() {
   if (!config.clientID) throw new Error('A google client id is required if you want to enable login via google.');
   if (!config.clientSecret) throw new Error('A google client secret is required if you want to enable login via google.');
 
-  return new GoogleStrategy(config, function(req, token, tokenSecret, profile, done) {
+  return new GoogleStrategy(config, function(req, identifier, profile, done) {
+      // normalize so it's similiar with facebook and twitter
+      profile.id = identifier;
       var opts = {
-        token: token,
-        tokenSecret: tokenSecret,
         profile: profile
-      }
+      };
 
       Mongo.User.findOne({
         'google.id': profile.id
@@ -24,7 +24,7 @@ module.exports = function() {
           // Get full account object and connect the facebook account to that account
           Mongo.User.findOne(req.user.id, function(err, user) {
             if (err) return done(err);
-            return _saveGoogleUser(opts, function(err, updatedUser) { // add fb account to previous
+            return _saveGoogleUser(opts, function(err, updatedUser) { // add account to previous
               if (err) return done(err);
               return done(null, updatedUser);
             }, user);
@@ -39,7 +39,7 @@ module.exports = function() {
           // are just different accounts entirely
           //
           Mongo.User.findOne({
-            email: profile._json.email
+            email: profile.emails[0].value
           }, function(err, user) {
             if (err) return done(err);
             if (user) {
@@ -52,10 +52,10 @@ module.exports = function() {
               return done(err, newUser);
             });
           });
-        };
+        }
       });
     });
-}
+};
 
 //
 // Private
@@ -71,16 +71,9 @@ module.exports = function() {
 // @returns {function} callback with an error and the new user
 //
 function _saveGoogleUser(opts, cb, existing) {
-  return console.log(opts.profile);
   var user = existing || new Mongo.User();
   user.google.id = opts.profile.id;
-  user.google.token = opts.token;
-  user.google.tokenSecret = opts.tokenSecret;
-  user.google.name = opts.profile.displayName;
-  // Look at _json for any more information to save to db.
-  // We'll just store this for now.
-  user.google.location = opts.profile._json.location;
-  user.google.picture = opts.profile._json.profile_image_url
+  user.google.name = opts.profile.name;
 
   user.save(function(err) {
     if (err) return cb(err);

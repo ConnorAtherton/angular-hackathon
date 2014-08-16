@@ -12,7 +12,7 @@ var tplCombined = config.files.atpl.concat(config.files.ctpl);
 
 gulp.task('js:lint', function () {
   return gulp
-    .src('app/**/*.js')
+    .src(['app/**/*.js', 'server/**/*.js'])
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish'));
 });

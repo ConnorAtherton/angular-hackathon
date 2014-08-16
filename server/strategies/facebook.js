@@ -36,7 +36,7 @@ module.exports = function() {
       accessToken: accessToken,
       refreshToken: refreshToken,
       profile: profile
-    }
+    };
 
     Mongo.User.findOne({ 'facebook.id': profile.id }, function(err, hasAccount) {
       if (err) return done(err);
@@ -72,10 +72,10 @@ module.exports = function() {
             return done(err, newUser);
           });
         });
-      };
+      }
     });
   });
-}
+};
 
 //
 // Private

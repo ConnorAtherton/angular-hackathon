@@ -22,7 +22,7 @@ var filterUser = function(user) {
   } else {
     return { user: null };
   }
-}
+};
 
 var auth = {
   initialise: function() {
@@ -50,7 +50,7 @@ var auth = {
   login: function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
       if (err) return next(err);
-      if (!user) return res.json(401, info)
+      if (!user) return res.json(401, info);
       req.logIn(user, function(err) {
         if (err) return next(err);
         return res.send(filterUser(user));
@@ -89,7 +89,7 @@ var auth = {
     return Mongo.User.findOne({ email: email }, function (err, doc) {
       if (err) return cb(err);
       if (doc) return cb(null, doc);
-      return cb(null, null)
+      return cb(null, null);
     });
   },
 
@@ -97,6 +97,6 @@ var auth = {
     res.json(200, filterUser(req.user));
   }
 
-}
+};
 
 module.exports = auth;

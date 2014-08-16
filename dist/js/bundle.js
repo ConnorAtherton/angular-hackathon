@@ -26416,7 +26416,7 @@ angular.module('AuthManager', [
   'RetryQueue'
 ])
 
-.factory('AuthManager', ['$http', '$q', '$location', 'RetryQueue', function($http, $q, $state, RetryQueue) {
+.factory('AuthManager', ['$http', '$q', '$state', 'RetryQueue', function($http, $q, $state, RetryQueue) {
 
   function retry(success) {
     if (success) {
@@ -26447,7 +26447,7 @@ angular.module('AuthManager', [
       return $http.post('/register', user).then(function (res) {
         api.currentUser = res.data.user;
         if (api.isAuthenticated()) {
-          return RetryQueue.hasMore() ? retry(true) : $state.go('console');
+          return RetryQueue.hasMore() ? retry(true) : $state.go('home');
         }
         return api.isAuthenticated();
       });
@@ -26458,7 +26458,7 @@ angular.module('AuthManager', [
         console.log('login response', res);
         api.currentUser = res.data.user;
         if (api.isAuthenticated()) {
-          return RetryQueue.hasMore() ? retry(true) : $state.go('console');
+          return RetryQueue.hasMore() ? retry(true) : $state.go('home');
         }
         return api.isAuthenticated();
       });
