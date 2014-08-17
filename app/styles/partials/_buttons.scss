@@ -1,11 +1,14 @@
 .btn {
   border-radius: 3px;
-  margin: 10px 0;
+  margin: 8px 0;
+  padding: 10px 16px;
 }
 
 .btn-full {
   display: block;
-  max-width: 350px;
+  width: 100%;
+  max-width: 300px;
+  margin: 8px auto;
 }
 
 

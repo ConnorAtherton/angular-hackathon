@@ -1,19 +1,17 @@
-form.form-horizontal {
-  label {
-    padding: 7px 0 3px 0;
-    text-align: left;
-  }
+form.custom {
 
   input {
-    border-radius: 3px;
-    margin-top: 10px;
+    transition: background-color ease-in-out 200ms, border-color ease-in-out 200ms;
+    border-radius: 0;
     font-size: 13px;
     color: #333;
-    border: 1px solid #d8d9d9;
     box-shadow: none;
-    @extend .small-type;
+    height: 50px;
+    border-left: 2px solid transparent;
+    padding: 0 19px;
 
     &:focus {
+      background-color: #f2f2f2;
       box-shadow: none;
     }
   }
@@ -22,36 +20,30 @@ form.form-horizontal {
     display: block;
   }
 
-  .error {
-    color: #E85A5A;
-    font-size: 12px;
-    padding: 3px 0 0 0;
-  }
-
-  .errorMessage {
-    @extend .error;
-    margin: 12px 0;
-  }
-
   .control-label {
     padding: 7px 0 3px 0;
   }
 
+  [class*='ng-'], .error {
+    transition: border-color ease-in-out 200ms;
+  }
+
   .ng-dirty {
-    border: 1px solid #e85a5a;
+    border-left: 2px solid #e85a5a;
   }
 
   .ng-valid {
-    border: 1px solid #d8d9d9;
+    border-left: 2px solid green;
   }
-}
 
-// Login specific styling
+  .error, .errorMessage {
+    color: #E85A5A;
+    font-size: 12px;
+    padding-left: 7px;
+  }
 
-.forgottenPassword {
-  margin-top: 8px;
-  display: inline-block;
-  font-size: 13px;
-  // line-height: 100%;
-  vertical-align: middle;
+  .errorMessage {
+    padding: 0;
+    margin: 10px 0;
+  }
 }

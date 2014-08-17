@@ -32,6 +32,7 @@ module.exports = function() {
   if (!config.callbackURL) throw new Error('A Facebook App callback URL is required if you want to enable login via Facebook.');
 
   return new FacebookStrategy(config, function(req, accessToken, refreshToken, profile, done) {
+    console.log('logging in via facebook');
     var opts = {
       accessToken: accessToken,
       refreshToken: refreshToken,
@@ -42,8 +43,9 @@ module.exports = function() {
       if (err) return done(err);
       if (req.user && hasAccount) return done(null, hasAccount); // already have one
 
+
       if (req.user) { // already logged in
-    //     // Get full account object and connect the facebook account to that account
+        // Get full account object and connect the facebook account to that account
         Mongo.User.findOne(req.user.id, function(err, user) {
           if (err) return done(err);
           return _saveFacebookUser(opts, function(err, updatedUser) { // add fb account to previous
@@ -56,11 +58,12 @@ module.exports = function() {
         if (hasAccount) return done(null, hasAccount);
 
         //
-        // The only way to pair up accounts is to check if the user email
-        // is the same as the one supplied to facebook. Else we'll assume they
-        // are just different accounts entirely
+        // Don't try and pair accounts with facebook since there are some edge cases
+        // where it fails to return an email
         //
-        Mongo.User.findOne({ email: profile._json.email }, function(err, user) {
+        Mongo.User.findOne({
+          email: profile._json.email
+        }, function(err, user) {
           if (err) return done(err);
           if (user) {
             // flash to user saying there is already a person using that email
@@ -91,12 +94,11 @@ module.exports = function() {
 // @returns {function} callback with an error and the new user
 //
 function _saveFacebookUser(opts, cb, existing) {
-  // console.log(opts.profile._json)
   var user = existing || new Mongo.User();
+  user.facebook.email = opts.profile._json.email || undefined;
   user.facebook.id = opts.profile.id;
   user.facebook.accessToken = opts.accessToken;
   user.facebook.name = opts.profile.name || opts.profile.name.givenName + ' ' + opts.profile.name.familyName;
-  user.facebook.email = opts.profile._json.email;
   user.facebook.picture = opts.profile.picture || 'https://graph.facebook.com/' + user.facebook.id + '/picture?type=large';
 
   user.save(function(err) {

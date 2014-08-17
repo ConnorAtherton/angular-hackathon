@@ -1,10 +1,10 @@
 nav.navbar.navbar-default
-  .navbar-inner.clearfix
+  .clearfix
     img.pull-left.logo(src='/assets/images/logo.png')
     ul.nav.navbar-nav.pull-right
-      li.logout(ng-show='isAuthenticated()')
-        a.logout(ng-click='logout()') Logout
-      li.login(ng-hide='isAuthenticated() || isPage("login")')
-        a.login(ui-sref='login') Login
-      li.register(ng-hide='isAuthenticated() || isPage("register")')
-        button.navbar-btn.btn.btn-default.register(ui-sref='register') register
+      li(ng-show='isAuthenticated()')
+        a(ng-click='logout()') Logout
+      li(ng-hide='isAuthenticated() || isPage("login")')
+        a(ui-sref='login') Login
+      li(ng-hide='isAuthenticated() || isPage("register")')
+        .navbar-btn.btn.btn-default(ui-sref='register') register

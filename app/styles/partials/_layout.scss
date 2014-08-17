@@ -1,0 +1,19 @@
+body {
+  background-color: #F1F3F5;
+
+  .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-top: 1px solid darken(#F1F3F5, 10%);
+  }
+}
+
+.col-center {
+  float: none !important;
+  margin: 0 auto;
+}
+
+.col-no-padding {
+  padding: 0;
+}

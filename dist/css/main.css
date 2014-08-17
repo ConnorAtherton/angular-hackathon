@@ -93,378 +93,113 @@
   width: 100%;
   border-radius: 0;
   background-color: white;
-  border: 0; }
-  .navbar .navbar-inner {
-    width: 100%;
-    max-width: 980px;
-    padding: 9px 15px;
-    margin: 0 auto;
-    border-bottom: 1px solid #eaeaea; }
-  .navbar .logo {
-    height: 40px;
-    width: auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 5px 0; }
-
-.container {
-  width: 100%;
-  max-width: 980px; }
-
-/*
-  Simple Grid
-  Learn More - http://dallasbass.com/simple-grid-a-lightweight-responsive-css-grid/
-  Project Page - http://thisisdallas.github.com/Simple-Grid/
-  Author - Dallas Bass
-  Site - dallasbass.com
-*/
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-body {
-  margin: 0px; }
-
-[class*='col-'] {
-  float: left;
-  padding-right: 20px;
-  /* column-space */ }
-
-.col-last {
-  padding-right: 0 !important; }
-
-.grid {
-  width: 100%;
-  max-width: 980px;
-  min-width: 755px;
-  margin: 0 auto;
-  overflow: hidden; }
-
-.grid:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-.grid-pad {
-  padding-top: 20px;
-  padding-left: 20px;
-  /* grid-space to left */
-  padding-right: 0px;
-  /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */ }
-
-.push-right {
-  float: right; }
-
-/* Content Columns */
-.col-1-1 {
-  width: 100%; }
-
-.col-2-3, .col-8-12 {
-  width: 66.66%; }
-
-.col-1-2, .col-6-12 {
-  width: 50%; }
-
-.col-1-3, .col-4-12 {
-  width: 33.33%; }
-
-.col-1-4, .col-3-12 {
-  width: 25%; }
-
-.col-1-5 {
-  width: 20%; }
-
-.col-1-6, .col-2-12 {
-  width: 16.667%; }
-
-.col-1-7 {
-  width: 14.28%; }
-
-.col-1-8 {
-  width: 12.5%; }
-
-.col-1-9 {
-  width: 11.1%; }
-
-.col-1-10 {
-  width: 10%; }
-
-.col-1-11 {
-  width: 9.09%; }
-
-.col-1-12 {
-  width: 8.33%; }
-
-/* Layout Columns */
-.col-11-12 {
-  width: 91.66%; }
-
-.col-10-12 {
-  width: 83.333%; }
-
-.col-9-12 {
-  width: 75%; }
-
-.col-5-12 {
-  width: 41.66%; }
-
-.col-7-12 {
-  width: 58.33%; }
-
-/* Pushing blocks */
-.push-2-3, .push-8-12 {
-  margin-left: 66.66%; }
-
-.push-1-2, .push-6-12 {
-  margin-left: 50%; }
-
-.push-1-3, .push-4-12 {
-  margin-left: 33.33%; }
-
-.push-1-4, .push-3-12 {
-  margin-left: 25%; }
-
-.push-1-5 {
-  margin-left: 20%; }
-
-.push-1-6, .push-2-12 {
-  margin-left: 16.667%; }
-
-.push-1-7 {
-  margin-left: 14.28%; }
-
-.push-1-8 {
-  margin-left: 12.5%; }
-
-.push-1-9 {
-  margin-left: 11.1%; }
-
-.push-1-10 {
-  margin-left: 10%; }
-
-.push-1-11 {
-  margin-left: 9.09%; }
-
-.push-1-12 {
-  margin-left: 8.33%; }
-
-@media handheld, only screen and (max-width: 767px) {
-  /* Mobile Layout */
-  /* Layout Columns */
-  .grid {
-    width: 100%;
-    min-width: 0;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 20px;
-    /* grid-space to left */
-    padding-right: 10px;
-    /* grid-space to right: (grid-space-left - column-space) e.g. 20px-10px=10px */ }
-  [class*='col-'] {
-    width: auto;
-    float: none;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 0px;
-    padding-right: 10px;
-    /* column-space */ }
-  [class*='mobile-col-'] {
-    float: left;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    padding-left: 0px;
-    padding-right: 10px;
-    /* column-space */
-    padding-bottom: 0px; }
-  .mobile-col-1-1 {
-    width: 100%; }
-  .mobile-col-2-3, .mobile-col-8-12 {
-    width: 66.66%; }
-  .mobile-col-1-2, .mobile-col-6-12 {
-    width: 50%; }
-  .mobile-col-1-3, .mobile-col-4-12 {
-    width: 33.33%; }
-  .mobile-col-1-4, .mobile-col-3-12 {
-    width: 25%; }
-  .mobile-col-1-5 {
-    width: 20%; }
-  .mobile-col-1-6, .mobile-col-2-12 {
-    width: 16.667%; }
-  .mobile-col-1-7 {
-    width: 14.28%; }
-  .mobile-col-1-8 {
-    width: 12.5%; }
-  .mobile-col-1-9 {
-    width: 11.1%; }
-  .mobile-col-1-10 {
-    width: 10%; }
-  .mobile-col-1-11 {
-    width: 9.09%; }
-  .mobile-col-1-12 {
-    width: 8.33%; }
-  .mobile-col-11-12 {
-    width: 91.66%; }
-  .mobile-col-10-12 {
-    width: 83.333%; }
-  .mobile-col-9-12 {
-    width: 75%; }
-  .mobile-col-5-12 {
-    width: 41.66%; }
-  .mobile-col-7-12 {
-    width: 58.33%; }
-  .hide-on-mobile {
-    display: none !important;
-    width: 0;
-    height: 0; } }
-
-.nav-tabs {
-  border-bottom: 1px solid #DFDFDF; }
-  .nav-tabs > li > a {
-    margin: 0;
-    border: 1px solid #DFDFDF;
-    border-radius: 0;
-    padding: 12px 19px;
-    color: #858585;
-    -webkit-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out; }
-    .nav-tabs > li > a:hover {
-      cursor: pointer;
-      background: #f1f1f1;
-      border: 1px solid #DFDFDF; }
-  .nav-tabs li:nth-last-child(2) > a {
-    border-right: 0; }
-    .nav-tabs li:nth-last-child(2) > a:hover {
-      border-right: 0; }
-  .nav-tabs li:first-child > a {
-    border-radius: 3px 0 0 0;
-    border-right: 0; }
-    .nav-tabs li:first-child > a:hover {
-      border-right: 0; }
-  .nav-tabs li:last-child > a {
-    border-radius: 0 3px 0 0;
-    border-right: 1px solid #DFDFDF; }
-  .nav-tabs li.active > a {
-    border-bottom: 1px solid #d24400; }
-    .nav-tabs li.active > a:hover {
-      border-bottom: 1px solid #d24400; }
+  border: none;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  margin-bottom: 0; }
 
 .btn {
   border-radius: 3px;
-  margin: 10px 0; }
+  margin: 8px 0;
+  padding: 10px 16px; }
 
 .btn-full {
   display: block;
-  max-width: 350px; }
-
-.double-tag {
-  margin: 7px 0; }
-  .double-tag > span {
-    text-align: left;
-    padding: 4px 2px; }
-
-.small-type, .double-tag > .label, form.form-horizontal input {
-  font-size: 13px;
-  color: #9f9f9f;
-  display: inline-block;
   width: 100%;
-  text-align: left; }
+  max-width: 300px;
+  margin: 8px auto; }
 
-h3.cost {
-  font-size: 1.8em;
-  text-align: center;
-  padding: 20px 0; }
-
-form.form-horizontal label {
-  padding: 7px 0 3px 0;
-  text-align: left; }
-form.form-horizontal input {
-  border-radius: 3px;
-  margin-top: 10px;
+form.custom input {
+  -webkit-transition: background-color ease-in-out 200ms, border-color ease-in-out 200ms;
+  transition: background-color ease-in-out 200ms, border-color ease-in-out 200ms;
+  border-radius: 0;
   font-size: 13px;
   color: #333;
-  border: 1px solid #d8d9d9;
   -webkit-box-shadow: none;
-  box-shadow: none; }
-  form.form-horizontal input:focus {
+  box-shadow: none;
+  height: 50px;
+  border-left: 2px solid transparent;
+  padding: 0 19px; }
+  form.custom input:focus {
+    background-color: #f2f2f2;
     -webkit-box-shadow: none;
     box-shadow: none; }
-form.form-horizontal span {
+form.custom span {
   display: block; }
-form.form-horizontal .error, form.form-horizontal form.form-horizontal .errorMessage, form.form-horizontal form.form-horizontal .errorMessage {
+form.custom .control-label {
+  padding: 7px 0 3px 0; }
+form.custom [class*='ng-'], form.custom .error {
+  -webkit-transition: border-color ease-in-out 200ms;
+  transition: border-color ease-in-out 200ms; }
+form.custom .ng-dirty {
+  border-left: 2px solid #e85a5a; }
+form.custom .ng-valid {
+  border-left: 2px solid green; }
+form.custom .error, form.custom .errorMessage {
   color: #E85A5A;
   font-size: 12px;
-  padding: 3px 0 0 0; }
-form.form-horizontal .errorMessage {
-  margin: 12px 0; }
-form.form-horizontal .control-label {
-  padding: 7px 0 3px 0; }
-form.form-horizontal .ng-dirty {
-  border: 1px solid #e85a5a; }
-form.form-horizontal .ng-valid {
-  border: 1px solid #d8d9d9; }
+  padding-left: 7px; }
+form.custom .errorMessage {
+  padding: 0;
+  margin: 10px 0; }
 
-.forgottenPassword {
-  margin-top: 8px;
-  display: inline-block;
-  font-size: 13px;
-  vertical-align: middle; }
+body {
+  background-color: #F1F3F5; }
+  body .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-top: 1px solid #d3d9e0; }
 
-#instance-list .console-instance {
-  padding: 15px 0; }
-  #instance-list .console-instance:not(first-child) {
-    border-bottom: 1px solid #ededed; }
-  #instance-list .console-instance:first-child {
-    border-top: 1px solid #ededed; }
-
-header.accounts {
-  padding: 15px 0; }
-
-.account {
-  padding: 13px 0;
-  border-bottom: 1px solid #dfdfdf; }
-  .account:hover {
-    cursor: pointer;
-    background-color: #f9f9f9; }
-
-#server-options {
-  margin-top: 15px; }
-  #server-options ul {
-    padding: 0; }
-  #server-options li {
-    list-style: none;
-    padding: 6px 4px; }
-  #server-options .tag {
-    border-radius: 3px;
-    border: 1px solid #d8d9d9;
-    font-size: 10px;
-    padding: 2px 5px;
-    text-transform: uppercase;
-    color: #bec0c0; }
-
-.centered {
+.col-center {
   float: none !important;
   margin: 0 auto; }
 
-#no-instances, .loading {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 250px; }
+.col-no-padding {
+  padding: 0; }
 
-.gravatar {
-  border-radius: 3px; }
+.login, .register {
+  background-color: #ffffff;
+  margin-top: 50px;
+  border-radius: 3px;
+  border: 1px solid #d3d9e0;
+  padding-bottom: 20px; }
+  .login header, .register header {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #d3d9e0;
+    padding: 15px 7px;
+    border-radius: 3px 3px 0 0;
+    text-align: center; }
+  .login input, .register input {
+    border: none;
+    margin: 0;
+    width: 100%; }
+  .login .form-bottom, .register .form-bottom {
+    padding: 0 22px; }
+  .login .info, .register .info {
+    font-size: 11px;
+    padding: 7px 0; }
+  .login .seperator, .register .seperator {
+    text-align: center;
+    padding: 4px 0; }
+    .login .seperator > span, .register .seperator > span {
+      color: #888;
+      display: inline-block;
+      position: relative;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid #EEE;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box; }
+      .login .seperator > span:after, .login .seperator > span:before, .register .seperator > span:after, .register .seperator > span:before {
+        position: absolute;
+        content: "";
+        left: 100%;
+        top: 50%;
+        width: 200%;
+        background: #EEE;
+        height: 1px; }
+      .login .seperator > span:before, .register .seperator > span:before {
+        left: auto;
+        right: 100%; }

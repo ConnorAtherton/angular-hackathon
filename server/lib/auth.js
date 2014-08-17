@@ -29,24 +29,6 @@ var auth = {
     DatabaseStrategy();
   },
 
-  // login: function(req, res, next, user) {
-  //   // var mode = user ? 'register' : 'login';
-  //   // console.log('Logging in in mode', mode);
-  //   // req.logIn( (user || req.user) , function(err) {
-  //   //   if (err) return next(err);
-  //   //   return res.json(filterUser(req.user));
-  //   // });
-  //   console.log('login route');
-  //   passport.authenticate('local', function (err, user, info) {
-  //     console.log('trying to authenticate');
-  //     if (err) return next(err);
-  //     if (!user) return res.json(401, info);
-  //     req.logIn(user, function(err) {
-  //       if (err) return next(err);
-  //       return res.json(filterUser(req.user));
-  //     });
-  //   })(req, res, next);
-  // },
   login: function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
       if (err) return next(err);

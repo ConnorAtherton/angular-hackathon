@@ -1,5 +1,6 @@
-section.register.col-5-12.centered
-  form.form-horizontal(novalidate, ng-submit="register()", name="registerForm", role="form")
+section.register.col-md-3.col-center.col-no-padding
+  header Register
+  form.custom(ng-submit="register()", name="registerForm", role="form")
 
     label.control-label.col-sm-2.hide(for="name") Name
     input.form-control(ng-model="user.fullName", ng-model-options="{ debounce: 300, updateOn: 'blur' }", name='name', type="text" placeholder="Full name", required, autofocus="true")
@@ -13,9 +14,12 @@ section.register.col-5-12.centered
     input.form-control(ng-model="user.password", ng-model-options="{ updateOn: 'blur' }", type="password", name='password', ng-minlength="6", placeholder="Password", required)
     span.error(ng-show='registerForm.password.$error.minlength') Your password must be greater than 6 characters.
 
-    p(ng-bind="message")
-    button.btn.btn-default(type="submit", ng-disabled="registerForm.$invalid") Register
-
-  .btn.btn-facebook.btn-full(ng-click='loginWith("facebook")') Register with facebook
-  .btn.btn-twitter.btn-full(ng-click='loginWith("twitter")') Register with twitter
-  .btn.btn-google.btn-full(ng-click='loginWith("google")') Register with google
+    .form-bottom
+      p.errorMessage(ng-bind="message")
+      button.btn.btn-default.btn-full(ng-disabled="registerForm.$invalid", type="submit") Register
+    .seperator
+      span or
+    .form-bottom
+      .btn.btn-facebook.btn-full(ng-click='loginWith("facebook")') Register with facebook
+      .btn.btn-twitter.btn-full(ng-click='loginWith("twitter")') Register with twitter
+      .btn.btn-google.btn-full(ng-click='loginWith("google")') Register with google

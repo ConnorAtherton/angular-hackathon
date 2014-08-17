@@ -74,6 +74,7 @@ function _saveGoogleUser(opts, cb, existing) {
   var user = existing || new Mongo.User();
   user.google.id = opts.profile.id;
   user.google.name = opts.profile.name;
+  user.google.email = opts.profile.emails[0].value;
 
   user.save(function(err) {
     if (err) return cb(err);

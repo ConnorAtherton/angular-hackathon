@@ -2,21 +2,10 @@
   width: 100%;
   border-radius: 0;
   background-color: white;
-  border: 0;
-
-  .navbar-inner {
-    width: 100%;
-    max-width: 980px;
-    padding: 9px 15px;
-    margin: 0 auto;
-    border-bottom: 1px solid #eaeaea;
-  }
-
-  .logo {
-    height: 40px;
-    width: auto;
-    box-sizing: border-box;
-    margin: 5px 0;
-  }
+  border: none;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  margin-bottom: 0;
 }
 

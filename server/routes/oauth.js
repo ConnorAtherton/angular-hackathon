@@ -3,6 +3,7 @@ var TwitterStrategy = require('../strategies/twitter');
 var GoogleStrategy = require('../strategies/google');
 var FacebookStrategy = require('../strategies/facebook');
 var redirects = { successRedirect: '/', failureRedirect: '/login' };
+var facebook = { successRedirect: '/', failureRedirect: '/login' };
 
 module.exports.addRoutes = function(app, config) {
 
@@ -13,7 +14,7 @@ module.exports.addRoutes = function(app, config) {
   app.get('/auth/twitter', passport.authenticate('twitter'));
   app.get('/auth/twitter/callback', passport.authenticate('twitter', redirects));
 
-  app.get('/auth/facebook', passport.authenticate('facebook'));
+  app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email'] }));
   app.get('/auth/facebook/callback', passport.authenticate('facebook', redirects));
 
   app.get('/auth/google', passport.authenticate('google'));

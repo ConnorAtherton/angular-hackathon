@@ -5,16 +5,17 @@ var Schema = mongoose.Schema;
 var User = new Schema({
   email: {
     type: String,
-    unique: true
+    unique: true,
+    sparse: true
   },
   password: String,
   fullName: String,
   joinDate: Date,
   facebook: {
     id: String,
-    token: String,
-    email: String,
-    name: String
+    accessToken: String,
+    name: String,
+    picture: String
   },
   twitter: {
     id: String,
