@@ -1,4 +1,3 @@
-/*  Variables */
 .btn:focus {
   outline: none; }
 
@@ -8,13 +7,12 @@
   -webkit-transition: background ease-in-out 100ms;
   transition: background ease-in-out 100ms;
   border-bottom: 2px solid #eee; }
+  .btn-social:hover {
+    color: #f2f2f2; }
   .btn-social:active {
     outline: none;
     -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1); }
-
-.btn-social:hover, a .btn-social:hover {
-  color: #f2f2f2; }
 
 .btn-default {
   background: #eee;
@@ -72,66 +70,96 @@
 
 /*  LinkedIn */
 .btn-linkedin {
-  background-color: #0073b2;
-  border-color: #0073b2; }
-
-.btn-linkedin:hover, a .btn-linkedin:hover {
-  background-color: #005c8e;
-  border-color: #005c8e; }
+  background: #0073b2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0073b2), to(#006093));
+  background: -webkit-linear-gradient(top, #0073b2 0%, #006093 100%);
+  background: linear-gradient(to bottom, #0073b2 0%, #006093 100%);
+  border-color: #004265; }
+  .btn-linkedin:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#006093), to(#006093));
+    background: -webkit-linear-gradient(top, #006093 0%, #006093 100%);
+    background: linear-gradient(to bottom, #006093 0%, #006093 100%); }
+  .btn-linkedin:active {
+    background-color: #004f7a; }
 
 /*  Pinterest */
 .btn-pinterest {
-  background-color: #cb2027;
-  border-color: #cb2027; }
+  background: #cb2027;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cb2027), to(#b11c23));
+  background: -webkit-linear-gradient(top, #cb2027 0%, #b11c23 100%);
+  background: linear-gradient(to bottom, #cb2027 0%, #b11c23 100%);
+  border-color: #89161b; }
+  .btn-pinterest:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#b11c23), to(#b11c23));
+    background: -webkit-linear-gradient(top, #b11c23 0%, #b11c23 100%);
+    background: linear-gradient(to bottom, #b11c23 0%, #b11c23 100%); }
+  .btn-pinterest:active {
+    background-color: #9b181f; }
 
-.btn-pinterest:hover, a .btn-pinterest:hover {
-  background-color: #ac1b22;
-  border-color: #ac1b22; }
-
-/*  GitHub */
 .btn-github {
-  background-color: #3a3838;
-  border-color: #3a3838; }
+  background: #3a3838;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3a3838), to(#2a2929));
+  background: -webkit-linear-gradient(top, #3a3838 0%, #2a2929 100%);
+  background: linear-gradient(to bottom, #3a3838 0%, #2a2929 100%);
+  border-color: #131212; }
+  .btn-github:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#2a2929), to(#2a2929));
+    background: -webkit-linear-gradient(top, #2a2929 0%, #2a2929 100%);
+    background: linear-gradient(to bottom, #2a2929 0%, #2a2929 100%); }
+  .btn-github:active {
+    background-color: #1d1c1c; }
 
-.btn-github:hover, a .btn-github:hover {
-  background-color: #282626;
-  border-color: #282626; }
-
-/* VK */
 .btn-vk {
-  background-color: #5e82a8;
-  border-color: #5e82a8; }
+  background: #5e82a8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5e82a8), to(#517496));
+  background: -webkit-linear-gradient(top, #5e82a8 0%, #517496 100%);
+  background: linear-gradient(to bottom, #5e82a8 0%, #517496 100%);
+  border-color: #415d78; }
+  .btn-vk:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#517496), to(#517496));
+    background: -webkit-linear-gradient(top, #517496 0%, #517496 100%);
+    background: linear-gradient(to bottom, #517496 0%, #517496 100%); }
+  .btn-vk:active {
+    background-color: #486886; }
 
-.btn-vk:hover, a .btn-vk:hover {
-  background-color: #4f7193;
-  border-color: #4f7193; }
-
-/*  Xing */
 .btn-xing {
-  background-color: #175e60;
-  border-color: #175e60; }
+  background: #175e60;
+  background: -webkit-gradient(linear, left top, left bottom, from(#175e60), to(#114647));
+  background: -webkit-linear-gradient(top, #175e60 0%, #114647 100%);
+  background: linear-gradient(to bottom, #175e60 0%, #114647 100%);
+  border-color: #082222; }
+  .btn-xing:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#114647), to(#114647));
+    background: -webkit-linear-gradient(top, #114647 0%, #114647 100%);
+    background: linear-gradient(to bottom, #114647 0%, #114647 100%); }
+  .btn-xing:active {
+    background-color: #0c3233; }
 
-.btn-xing:hover, a .btn-xing:hover {
-  background-color: #104243;
-  border-color: #104243; }
-
-/*  Tumblr */
 .btn-tumblr {
-  background-color: #35465c;
-  border-color: #35465c; }
+  background: #35465c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#35465c), to(#2a3849));
+  background: -webkit-linear-gradient(top, #35465c 0%, #2a3849 100%);
+  background: linear-gradient(to bottom, #35465c 0%, #2a3849 100%);
+  border-color: #19212b; }
+  .btn-tumblr:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#2a3849), to(#2a3849));
+    background: -webkit-linear-gradient(top, #2a3849 0%, #2a3849 100%);
+    background: linear-gradient(to bottom, #2a3849 0%, #2a3849 100%); }
+  .btn-tumblr:active {
+    background-color: #202b38; }
 
-.btn-tumblr:hover, a .btn-tumblr:hover {
-  background-color: #283545;
-  border-color: #283545; }
-
-/*  Reddit */
 .btn-reddit {
-  background-color: #ff5700;
-  border-color: #ff5700; }
-
-.btn-reddit:hover, a .btn-reddit:hover {
-  background-color: #db4900;
-  border-color: #db4900; }
+  background: #ff5700;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff5700), to(#e04b00));
+  background: -webkit-linear-gradient(top, #ff5700 0%, #e04b00 100%);
+  background: linear-gradient(to bottom, #ff5700 0%, #e04b00 100%);
+  border-color: #b33b00; }
+  .btn-reddit:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#e04b00), to(#e04b00));
+    background: -webkit-linear-gradient(top, #e04b00 0%, #e04b00 100%);
+    background: linear-gradient(to bottom, #e04b00 0%, #e04b00 100%); }
+  .btn-reddit:active {
+    background-color: #c73f00; }
 
 .navbar {
   width: 100%;
@@ -323,7 +351,7 @@ body {
       text-align: center; }
       body > header .hero .contribute {
         margin: auto;
-        padding: 40px 0; }
+        padding: 60px 0; }
         body > header .hero .contribute .twitter {
           -webkit-animation: fadeInLeft 1500ms;
           animation: fadeInLeft 1500ms;
@@ -339,7 +367,7 @@ body {
           -webkit-animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1);
           animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1); }
       body > header .hero .information {
-        padding: 40px;
+        padding: 60px;
         font-weight: 400;
         color: #ddd; }
     body > header h1, body > header h2, body > header h3, body > header h5 {

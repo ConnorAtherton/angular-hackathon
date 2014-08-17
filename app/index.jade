@@ -14,10 +14,10 @@ html(lang="en", ng-app="nghack")
         h1 nghack
         h3 An opinionated node boilerplate for angular applications.
         .contribute
-          .twitter.col-xs-6
-            h5 spread the word
-          .github.col-xs-6
-            h5 get involved
+          .twitter.col-xs-6.col-sm-3.col-sm-offset-3
+            a(href="https://twitter.com/share" class="twitter-share-button" data-url="https://github.com/ConnorAtherton/angular-hackathon/" data-via="ConnorAtherton6") Tweet
+          .github.col-xs-6.col-sm-3
+            a(href="https://github.com/ConnorAtherton/angular-hackathon", class="github-button", data-icon="octicon-star", data-count-href="/ConnorAtherton/angular-hackathon/stargazers", data-count-api="/repos/ConnorAtherton/angular-hackathon#stargazers_count") Star nghack
         .information
           .col-xs-12.col-sm-4
             p.
@@ -32,6 +32,10 @@ html(lang="en", ng-app="nghack")
 
       .hero(ng-show='authenticated')
         h3 You are now authenticated.
+
     section(ui-view class="container")
+
+    script(async src="//platform.twitter.com/widgets.js")
+    script(async defer id="github-bjs" src="https://buttons.github.io/buttons.js")
     script(src="/js/bundle.js")
 
