@@ -1,7 +1,12 @@
 /*  Variables */
+$color-default: #eee;
+$color-default-hover: darken(#eee, 6%);
 $color-twitter: #41b7d8;
+$color-twitter-hover: darken(#41b7d8, 6%);
 $color-facebook: #3b5997;
+$color-facebook-hover: darken(#3b5997, 6%);
 $color-google: #d64937;
+$color-google-hover: darken(#d64937, 6%);
 $color-linkedin: #0073b2;
 $color-pinterest: #cb2027;
 $color-github: #3a3838;
@@ -10,45 +15,86 @@ $color-xing: #175e60;
 $color-tumblr: #35465c;
 $color-reddit: #ff5700;
 
+.btn:focus {
+  outline: none;
+}
+
+.btn-social {
+  color: #fff;
+  font-weight: normal;
+  transition: background ease-in-out 100ms;
+  border-bottom: 2px solid #eee;
+
+  &:active {
+    outline: none;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn-social:hover,
+a .btn-social:hover {
+  color: darken(#fff, 5%);
+}
+
+.btn-default {
+  background: $color-default;
+  background: linear-gradient(to bottom, $color-default 0%, $color-default-hover 100%);
+  border-color: darken($color-default, 15%);
+
+  &:hover {
+    background: linear-gradient(to bottom, $color-default-hover 0%, $color-default-hover 100%);
+  }
+
+  &:active {
+    background-color: darken($color-default-hover, 5%);
+  }
+}
+
 
 /*  Twitter */
 .btn-twitter {
-  background-color: $color-twitter;
-  border-color: $color-twitter;
-}
+  background: $color-twitter;
+  background: linear-gradient(to bottom, $color-twitter 0%, $color-twitter-hover 100%);
+  border-color: darken($color-twitter, 15%);
 
-.btn-twitter:hover,
-a .btn-twitter:hover {
-  background-color: darken( $color-twitter, 15% );
-  border-color: darken( $color-twitter, 15% );
-}
+  &:hover {
+    background: linear-gradient(to bottom, $color-twitter-hover 0%, $color-twitter-hover 100%);
+  }
 
+  &:active {
+    background-color: darken($color-twitter-hover, 5%);
+  }
+}
 
 /*  Facebook */
 .btn-facebook {
-  background-color: $color-facebook;
-  border-color: $color-facebook;
+  background: $color-facebook;
+  background: linear-gradient(to bottom, $color-facebook 0%, $color-facebook-hover 100%);
+  border-color: darken($color-facebook, 15%);
+
+  &:hover {
+    background: linear-gradient(to bottom, $color-facebook-hover 0%, $color-facebook-hover 100%);
+  }
+
+  &:active {
+    background-color: darken($color-facebook-hover, 5%);
+  }
 }
 
-.btn-facebook:hover,
-a .btn-facebook:hover {
-  background-color: darken( $color-facebook, 15% );
-  border-color: darken( $color-facebook, 15% );
-}
-
-
-/*  Google */
+// /*  Google */
 .btn-google {
-  background-color: $color-google;
-  border-color: $color-google;
-}
+  background: $color-google;
+  background: linear-gradient(to bottom, $color-google 0%, $color-google-hover 100%);
+  border-color: darken($color-google, 15%);
 
-.btn-google:hover,
-a .btn-google:hover {
-  background-color: darken( $color-google, 15% );
-  border-color: darken( $color-google, 15% );
-}
+  &:hover {
+    background: linear-gradient(to bottom, $color-google-hover 0%, $color-google-hover 100%);
+  }
 
+  &:active {
+    background-color: darken($color-google-hover, 5%);
+  }
+}
 
 /*  LinkedIn */
 .btn-linkedin {
@@ -58,8 +104,8 @@ a .btn-google:hover {
 
 .btn-linkedin:hover,
 a .btn-linkedin:hover {
-  background-color: darken( $color-linkedin, 15% );
-  border-color: darken( $color-linkedin, 15% );
+  background-color: darken( $color-linkedin, 7% );
+  border-color: darken( $color-linkedin, 7% );
 }
 
 
@@ -71,8 +117,8 @@ a .btn-linkedin:hover {
 
 .btn-pinterest:hover,
 a .btn-pinterest:hover {
-  background-color: darken( $color-pinterest, 15% );
-  border-color: darken( $color-pinterest, 15% );
+  background-color: darken( $color-pinterest, 7% );
+  border-color: darken( $color-pinterest, 7% );
 }
 
 
@@ -84,8 +130,8 @@ a .btn-pinterest:hover {
 
 .btn-github:hover,
 a .btn-github:hover {
-  background-color: darken( $color-github, 15% );
-  border-color: darken( $color-github, 15% );
+  background-color: darken( $color-github, 7% );
+  border-color: darken( $color-github, 7% );
 }
 
 
@@ -97,8 +143,8 @@ a .btn-github:hover {
 
 .btn-vk:hover,
 a .btn-vk:hover {
-  background-color: darken( $color-vk, 15% );
-  border-color: darken( $color-vk, 15% );
+  background-color: darken( $color-vk, 7% );
+  border-color: darken( $color-vk, 7% );
 }
 
 
@@ -110,8 +156,8 @@ a .btn-vk:hover {
 
 .btn-xing:hover,
 a .btn-xing:hover {
-    background-color: darken( $color-xing, 15% );
-    border-color: darken( $color-xing, 15% );
+    background-color: darken( $color-xing, 7% );
+    border-color: darken( $color-xing, 7% );
 }
 
 
@@ -123,8 +169,8 @@ a .btn-xing:hover {
 
 .btn-tumblr:hover,
 a .btn-tumblr:hover {
-  background-color: darken( $color-tumblr, 15% );
-  border-color: darken( $color-tumblr, 15% );
+  background-color: darken( $color-tumblr, 7% );
+  border-color: darken( $color-tumblr, 7% );
 }
 
 /*  Reddit */
@@ -135,6 +181,6 @@ a .btn-tumblr:hover {
 
 .btn-reddit:hover,
 a .btn-reddit:hover {
-  background-color: darken( $color-reddit, 15% );
-  border-color: darken( $color-reddit, 15% );
+  background-color: darken( $color-reddit, 7% );
+  border-color: darken( $color-reddit, 7% );
 }

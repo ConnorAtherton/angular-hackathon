@@ -65,10 +65,16 @@ angular.module('nghack', [
 
 .controller('AppCtrl', function AppCtrl($scope, $state, AuthManager) {
 
-  $scope.isAuthenticated = AuthManager.isAuthenticated;
+  $scope.authenticated = AuthManager.isAuthenticated;
 
   $scope.isPage = function (page) {
     return $state.is(page);
   };
+
+  $scope.$watch(function () {
+    return AuthManager.isAuthenticated();
+  }, function (currentUser) {
+    $scope.authenticated = currentUser;
+  });
 
 });

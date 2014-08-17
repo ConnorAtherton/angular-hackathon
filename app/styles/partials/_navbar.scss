@@ -1,11 +1,39 @@
 .navbar {
   width: 100%;
   border-radius: 0;
-  background-color: white;
+  background: transparent;
   border: none;
   height: 60px;
   line-height: 60px;
   vertical-align: middle;
   margin-bottom: 0;
+
+  .navbar-default {
+    background: transparent;
+    border: 0;
+  }
+
+  .navbar-nav {
+    margin: 0;
+  }
+
+  .navbar-nav > li {
+    float: left;
+  }
+
+  .navbar-nav > li > a {
+    padding: 20px;
+    color: white;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: #ddd;
+      cursor: pointer;
+    }
+  }
 }
+
+
 

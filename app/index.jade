@@ -2,11 +2,36 @@ doctype html
 html(lang="en", ng-app="nghack")
   head
     title(ng-bind="pageTitle") Angular hackathon
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:100,400,700,900')
     link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
     link(rel="stylesheet", href="/css/main.css")
     link(rel="stylesheet", href="/css/vendor.css")
   body(ng-controller='AppCtrl')
-    login-toolbar
+    header(ng-show='isPage("home")')
+      login-toolbar
+      .background(ng-class="authenticated ? 'auth' : 'no-auth'")
+      .hero(ng-hide='authenticated')
+        h1 nghack
+        h3 An opinionated node boilerplate for angular applications.
+        .contribute
+          .twitter.col-xs-6
+            h5 spread the word
+          .github.col-xs-6
+            h5 get involved
+        .information
+          .col-xs-12.col-sm-4
+            p.
+              Authentication right out of the box, including easily customisable oauth logins
+              to fit your needs.
+          .col-xs-12.col-sm-4
+            p.
+              Complete directory structure to help you focus on actually building your angular application.
+          .col-xs-12.col-sm-4
+            p.
+              It's extremely hackable. nghack comes with all sorts of goodies, just chop out what you don't need.
+
+      .hero(ng-show='authenticated')
+        h3 You are now authenticated.
     section(ui-view class="container")
     script(src="/js/bundle.js")
 

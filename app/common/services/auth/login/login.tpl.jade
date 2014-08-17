@@ -1,4 +1,4 @@
-section.login.col-md-3.col-center.col-no-padding
+section.login.col-sm-4.col-xs-12.col-center.col-no-padding
   header Login
   //- h5(ng-bind="getLoginReason()")
   form.custom(ng-submit="login()", name="loginForm", role="form")
@@ -20,7 +20,7 @@ section.login.col-md-3.col-center.col-no-padding
     .seperator
       span or
     .form-bottom
-      .btn.btn-facebook.btn-full(ng-click='loginWith("facebook")') Login with facebook
-      .btn.btn-twitter.btn-full(ng-click='loginWith("twitter")') Login with twitter
-      .btn.btn-google.btn-full(ng-click='loginWith("google")') Login with google
+      .btn.btn-social.btn-facebook.btn-full(ng-click='loginWith("facebook")') Login with facebook
+      .btn.btn-social.btn-twitter.btn-full(ng-click='loginWith("twitter")') Login with twitter
+      .btn.btn-social.btn-google.btn-full(ng-click='loginWith("google")') Login with google
 

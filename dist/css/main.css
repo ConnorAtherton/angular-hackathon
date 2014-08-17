@@ -1,30 +1,74 @@
 /*  Variables */
+.btn:focus {
+  outline: none; }
+
+.btn-social {
+  color: #fff;
+  font-weight: normal;
+  -webkit-transition: background ease-in-out 100ms;
+  transition: background ease-in-out 100ms;
+  border-bottom: 2px solid #eee; }
+  .btn-social:active {
+    outline: none;
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1); }
+
+.btn-social:hover, a .btn-social:hover {
+  color: #f2f2f2; }
+
+.btn-default {
+  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#dfdfdf));
+  background: -webkit-linear-gradient(top, #eee 0%, #dfdfdf 100%);
+  background: linear-gradient(to bottom, #eee 0%, #dfdfdf 100%);
+  border-color: #c8c8c8; }
+  .btn-default:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#dfdfdf));
+    background: -webkit-linear-gradient(top, #dfdfdf 0%, #dfdfdf 100%);
+    background: linear-gradient(to bottom, #dfdfdf 0%, #dfdfdf 100%); }
+  .btn-default:active {
+    background-color: #d2d2d2; }
+
 /*  Twitter */
 .btn-twitter {
-  background-color: #41b7d8;
-  border-color: #41b7d8; }
-
-.btn-twitter:hover, a .btn-twitter:hover {
-  background-color: #238caa;
+  background: #41b7d8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#41b7d8), to(#2bacd0));
+  background: -webkit-linear-gradient(top, #41b7d8 0%, #2bacd0 100%);
+  background: linear-gradient(to bottom, #41b7d8 0%, #2bacd0 100%);
   border-color: #238caa; }
+  .btn-twitter:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#2bacd0), to(#2bacd0));
+    background: -webkit-linear-gradient(top, #2bacd0 0%, #2bacd0 100%);
+    background: linear-gradient(to bottom, #2bacd0 0%, #2bacd0 100%); }
+  .btn-twitter:active {
+    background-color: #269abb; }
 
 /*  Facebook */
 .btn-facebook {
-  background-color: #3b5997;
-  border-color: #3b5997; }
-
-.btn-facebook:hover, a .btn-facebook:hover {
-  background-color: #263960;
+  background: #3b5997;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3b5997), to(#324d81));
+  background: -webkit-linear-gradient(top, #3b5997 0%, #324d81 100%);
+  background: linear-gradient(to bottom, #3b5997 0%, #324d81 100%);
   border-color: #263960; }
+  .btn-facebook:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#324d81), to(#324d81));
+    background: -webkit-linear-gradient(top, #324d81 0%, #324d81 100%);
+    background: linear-gradient(to bottom, #324d81 0%, #324d81 100%); }
+  .btn-facebook:active {
+    background-color: #2b436f; }
 
-/*  Google */
 .btn-google {
-  background-color: #d64937;
-  border-color: #d64937; }
-
-.btn-google:hover, a .btn-google:hover {
-  background-color: #a02d21;
+  background: #d64937;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d64937), to(#c63829));
+  background: -webkit-linear-gradient(top, #d64937 0%, #c63829 100%);
+  background: linear-gradient(to bottom, #d64937 0%, #c63829 100%);
   border-color: #a02d21; }
+  .btn-google:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#c63829), to(#c63829));
+    background: -webkit-linear-gradient(top, #c63829 0%, #c63829 100%);
+    background: linear-gradient(to bottom, #c63829 0%, #c63829 100%); }
+  .btn-google:active {
+    background-color: #b13224; }
 
 /*  LinkedIn */
 .btn-linkedin {
@@ -32,8 +76,8 @@
   border-color: #0073b2; }
 
 .btn-linkedin:hover, a .btn-linkedin:hover {
-  background-color: #004265;
-  border-color: #004265; }
+  background-color: #005c8e;
+  border-color: #005c8e; }
 
 /*  Pinterest */
 .btn-pinterest {
@@ -41,8 +85,8 @@
   border-color: #cb2027; }
 
 .btn-pinterest:hover, a .btn-pinterest:hover {
-  background-color: #89161b;
-  border-color: #89161b; }
+  background-color: #ac1b22;
+  border-color: #ac1b22; }
 
 /*  GitHub */
 .btn-github {
@@ -50,8 +94,8 @@
   border-color: #3a3838; }
 
 .btn-github:hover, a .btn-github:hover {
-  background-color: #131212;
-  border-color: #131212; }
+  background-color: #282626;
+  border-color: #282626; }
 
 /* VK */
 .btn-vk {
@@ -59,8 +103,8 @@
   border-color: #5e82a8; }
 
 .btn-vk:hover, a .btn-vk:hover {
-  background-color: #415d78;
-  border-color: #415d78; }
+  background-color: #4f7193;
+  border-color: #4f7193; }
 
 /*  Xing */
 .btn-xing {
@@ -68,8 +112,8 @@
   border-color: #175e60; }
 
 .btn-xing:hover, a .btn-xing:hover {
-  background-color: #082222;
-  border-color: #082222; }
+  background-color: #104243;
+  border-color: #104243; }
 
 /*  Tumblr */
 .btn-tumblr {
@@ -77,8 +121,8 @@
   border-color: #35465c; }
 
 .btn-tumblr:hover, a .btn-tumblr:hover {
-  background-color: #19212b;
-  border-color: #19212b; }
+  background-color: #283545;
+  border-color: #283545; }
 
 /*  Reddit */
 .btn-reddit {
@@ -86,18 +130,34 @@
   border-color: #ff5700; }
 
 .btn-reddit:hover, a .btn-reddit:hover {
-  background-color: #b33b00;
-  border-color: #b33b00; }
+  background-color: #db4900;
+  border-color: #db4900; }
 
 .navbar {
   width: 100%;
   border-radius: 0;
-  background-color: white;
+  background: transparent;
   border: none;
   height: 60px;
   line-height: 60px;
   vertical-align: middle;
   margin-bottom: 0; }
+  .navbar .navbar-default {
+    background: transparent;
+    border: 0; }
+  .navbar .navbar-nav {
+    margin: 0; }
+  .navbar .navbar-nav > li {
+    float: left; }
+  .navbar .navbar-nav > li > a {
+    padding: 20px;
+    color: white;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase; }
+    .navbar .navbar-nav > li > a:hover {
+      color: #ddd;
+      cursor: pointer; }
 
 .btn {
   border-radius: 3px;
@@ -144,8 +204,164 @@ form.custom .errorMessage {
   padding: 0;
   margin: 10px 0; }
 
+@-webkit-keyframes background-change {
+  from {
+    background-position: 0 0; }
+
+  to {
+    background-position: 100% 0; } }
+
+@keyframes background-change {
+  from {
+    background-position: 0 0; }
+
+  to {
+    background-position: 100% 0; } }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(75px);
+    transform: translateY(75px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(75px);
+    transform: translateY(75px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+html, body {
+  height: 100%;
+  font-family: 'Lato', sans-serif; }
+
 body {
-  background-color: #F1F3F5; }
+  background-color: #F1F3F5;
+  overflow: scroll; }
+  body > header {
+    position: relative;
+    padding-bottom: 50px;
+    min-height: 100%;
+    width: 100%; }
+    body > header > .background {
+      height: 100%;
+      width: 400%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -99999; }
+    body > header .background.no-auth {
+      background: #0F1B58;
+      background-image: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg, #E5E9BF 10%, #00396F 90%);
+      background-position: 0px 0px;
+      background-repeat: repeat-x;
+      -webkit-animation: background-change 5s infinite;
+      animation: background-change 5s infinite; }
+    body > header .background.auth {
+      background: #0F1B58;
+      background-image: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg, #ff7a38, #E0A681 10%, #530343 90%);
+      background-position: 0px 0px;
+      background-repeat: repeat-x;
+      -webkit-animation: background-change 5s infinite;
+      animation: background-change 5s infinite; }
+    body > header .hero {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center; }
+      body > header .hero .contribute {
+        margin: auto;
+        padding: 40px 0; }
+        body > header .hero .contribute .twitter {
+          -webkit-animation: fadeInLeft 1500ms;
+          animation: fadeInLeft 1500ms;
+          -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+          -webkit-animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1);
+          animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1); }
+        body > header .hero .contribute .github {
+          -webkit-animation: fadeInRight 1500ms;
+          animation: fadeInRight 1500ms;
+          -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+          -webkit-animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1);
+          animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1); }
+      body > header .hero .information {
+        padding: 40px;
+        font-weight: 400;
+        color: #ddd; }
+    body > header h1, body > header h2, body > header h3, body > header h5 {
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-weight: 100; }
+    body > header h1 {
+      font-weight: 500;
+      font-size: 3.5em;
+      margin: 0.5em 0;
+      -webkit-animation: fadeInUp 1500ms;
+      animation: fadeInUp 1500ms;
+      -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.2, 1);
+      animation-timing-function: cubic-bezier(0.165, 0.84, 0.2, 1); }
+    body > header h3 {
+      -webkit-animation: fadeInUp 1500ms;
+      animation: fadeInUp 1500ms;
+      -webkit-animation-delay: 300ms;
+      animation-delay: 300ms;
+      -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.4, 1);
+      animation-timing-function: cubic-bezier(0.1, 0.9, 0.4, 1); }
   body .container {
     margin: 0;
     padding: 0;
@@ -164,7 +380,8 @@ body {
   margin-top: 50px;
   border-radius: 3px;
   border: 1px solid #d3d9e0;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  max-width: 300px !important; }
   .login header, .register header {
     background-color: #f2f2f2;
     border-bottom: 1px solid #d3d9e0;
@@ -181,6 +398,8 @@ body {
     font-size: 11px;
     padding: 7px 0; }
   .login .seperator, .register .seperator {
+    position: relative;
+    clear: both;
     text-align: center;
     padding: 4px 0; }
     .login .seperator > span, .register .seperator > span {

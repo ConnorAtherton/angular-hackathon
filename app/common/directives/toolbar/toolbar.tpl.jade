@@ -1,10 +1,9 @@
 nav.navbar.navbar-default
   .clearfix
-    img.pull-left.logo(src='/assets/images/logo.png')
     ul.nav.navbar-nav.pull-right
       li(ng-show='isAuthenticated()')
         a(ng-click='logout()') Logout
       li(ng-hide='isAuthenticated() || isPage("login")')
         a(ui-sref='login') Login
       li(ng-hide='isAuthenticated() || isPage("register")')
-        .navbar-btn.btn.btn-default(ui-sref='register') register
+        a(ui-sref='register') Register
