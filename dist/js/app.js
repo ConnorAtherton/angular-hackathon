@@ -368,6 +368,9 @@ angular.module('Chat', [])
   $scope.messages = [];
 
   $scope.sendMessage = function() {
+    // validate minlength not working
+    if ($scope.message.length < 1) return;
+
     socket.emit('message', $scope.message);
     $scope.message = '';
   };

@@ -27,15 +27,15 @@ body {
       z-index: -99999;
     }
     .background.no-auth {
-      background: #0F1B58;
-      background-image: radial-gradient(closest-corner,rgba(16, 47, 70, 0) 60%,rgba(16, 47, 70, 0.2)),-webkit-linear-gradient(108deg,#E5E9BF 10%,#00396F 90%);
+      background: #00396F;
+      background-image: radial-gradient(closest-corner,rgba(16, 47, 70, 0) 60%,rgba(16, 47, 70, 0.2)), linear-gradient(342deg,#E5E9BF 10%,#00396F 90%);
       background-position: 0px 0px;
       background-repeat: repeat-x;
       animation: background-change 5s infinite;
     }
     .background.auth {
       background: #530343;
-      background-image:  radial-gradient(closest-corner,rgba(16, 47, 70, 0) 60%,rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg,#ff7a38,#E0A681 10%,#530343 90%);
+      background-image:  radial-gradient(closest-corner,rgba(16, 47, 70, 0) 60%,rgba(16, 47, 70, 0.2)), linear-gradient(342deg,#ff7a38,#E0A681 10%,#530343 90%);
       background-position: 0px 0px;
       background-repeat: repeat-x;
       animation: background-change 5s infinite;

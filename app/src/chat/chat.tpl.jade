@@ -22,5 +22,5 @@ section#chat-window.col-xs-12.col-md-4.col-no-padding
         span {{message.time | date: 'shortTime'}}
 
   form
-    textarea(ng-model="message", enter-submit="sendMessage()" , name="message", required, placeholder="Type a short message here (enter to send)")
+    textarea(ng-model="message", enter-submit="sendMessage()" , name="message", ng-required, required, ng-minlength="1", placeholder="Type a short message here (enter to send)")
     button.btn.btn-default.btn-full.hide(ng-disabled="messageForm.$invalid", type="submit", ng-click='sendMessage()') Send
