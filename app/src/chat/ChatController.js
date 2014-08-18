@@ -1,6 +1,6 @@
 angular.module('Chat', [])
 
-.config(function($stateProvider) {
+.config(['$stateProvider', function($stateProvider) {
 
   $stateProvider
     .state('chat', {
@@ -8,7 +8,7 @@ angular.module('Chat', [])
       controller: 'ChatCtrl',
       templateUrl: 'chat/chat.tpl.html'
     });
-})
+}])
 
 .controller('ChatCtrl', ['$scope', 'socket', function ($scope, socket) {
 

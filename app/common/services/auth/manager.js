@@ -2,7 +2,7 @@ angular.module('AuthManager', [
   'RetryQueue'
 ])
 
-.factory('AuthManager', ['$http', '$q', '$state', 'RetryQueue', function($http, $q, $state, RetryQueue) {
+.factory('AuthManager', ['$http', '$q', '$state', 'RetryQueue', '$location', function($http, $q, $state, RetryQueue, $location) {
 
   function retry(success) {
     if (success) {
@@ -21,16 +21,12 @@ angular.module('AuthManager', [
   // The public API of the service
   var api = {
 
-    getLoginReason: function () {
+    getLoginReason: function() {
       return RetryQueue.retryReason();
     },
 
-    isAuthenticated: function () {
-      return !!api.currentUser;
-    },
-
-    register: function (user) {
-      return $http.post('/register', user).then(function (res) {
+    register: function(user) {
+      return $http.post('/register', user).then(function(res) {
         api.currentUser = res.data.user;
         if (api.isAuthenticated()) {
           return RetryQueue.hasMore() ? retry(true) : $state.go('home');
@@ -39,9 +35,8 @@ angular.module('AuthManager', [
       });
     },
 
-    login: function (user) {
-      return $http.post('/login', user).then(function (res) {
-        console.log('login response', res);
+    login: function(user) {
+      return $http.post('/login', user).then(function(res) {
         api.currentUser = res.data.user;
         if (api.isAuthenticated()) {
           return RetryQueue.hasMore() ? retry(true) : $state.go('home');
@@ -51,7 +46,7 @@ angular.module('AuthManager', [
     },
 
     logout: function() {
-      $http.post('/logout').then(function () {
+      $http.post('/logout').then(function() {
         api.currentUser = null;
         // make sure to clear the retry queue
         // so it is empty if they try to log back in
@@ -68,27 +63,26 @@ angular.module('AuthManager', [
         // auth provider can resolve it in a route
         return $q.when(api.currentUser);
       } else {
-        return $http.get('/current-user').then(function (res) {
+        return $http.get('/current-user').then(function(res) {
           api.currentUser = res.data.user;
           return api.currentUser;
         });
       }
     },
 
-    requireAuthenticatedUser: function (path, pageName) {
-      pageName = pageName ? 'the ' + pageName : 'this';
-
-      var promise = api.requestCurrentUser().then(function(user) {
-        if (!api.isAuthenticated()) {
-          return RetryQueue.pushRetryFn('You need to be logged in to view ' + pageName + ' page.', api.requireAuthenticatedUser, path, pageName);
+    requireAuthenticatedUser: function (path) {
+      return api.requestCurrentUser().then(function(user) {
+        if (api.isAuthenticated()) {
+          // Recursively calls about state resolve
+          // return $state.go("path");
+          return $location.path(path);
         } else {
-          $state.go(path);
+          return RetryQueue.pushRetryFn('You need to be logged in to view this page.', api.requireAuthenticatedUser, path);
         }
       });
-      return promise;
     },
 
-    redirectIfAuthenticated: function (route) {
+    redirectIfAuthenticated: function(route) {
       var deferred = $q.defer();
 
       if (!api.isAuthenticated()) {
@@ -106,6 +100,10 @@ angular.module('AuthManager', [
         api.currentUser = res.data.user;
         return api.currentUser;
       });
+    },
+
+    isAuthenticated: function() {
+      return !!api.currentUser;
     },
 
     // stores state of the current user

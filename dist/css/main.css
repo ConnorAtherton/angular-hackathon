@@ -200,7 +200,8 @@ body {
     position: relative;
     padding-bottom: 50px;
     min-height: 100%;
-    width: 100%; }
+    width: 100%;
+    overflow-x: hidden; }
     body > header > .background {
       height: 100%;
       width: 400%;

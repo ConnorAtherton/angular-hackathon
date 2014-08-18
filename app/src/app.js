@@ -25,8 +25,7 @@ angular.module('nghack', [
       url: "/about",
       templateUrl: "about.tpl.html",
       resolve: {
-        auth: function(AuthManager) {
-          console.log('Auth', AuthManager);
+        loggedIn: function (AuthManager) {
           return AuthManager.requireAuthenticatedUser('about');
         }
       }
@@ -48,7 +47,6 @@ angular.module('nghack', [
       'responseError': function (response) {
         if (response.status === 401 || response.status === 403) {
           $rootScope.appErrorMessage = response.data.message;
-          // $location.path('/login');
         }
         return $q.reject(response);
       }
@@ -71,7 +69,7 @@ angular.module('nghack', [
 
 })
 
-.controller('AppCtrl', function AppCtrl($scope, $state, AuthManager) {
+.controller('AppCtrl', ['$scope', '$state', 'AuthManager', function AppCtrl($scope, $state, AuthManager) {
 
   $scope.authenticated = AuthManager.isAuthenticated;
 
@@ -89,4 +87,4 @@ angular.module('nghack', [
     $scope.authenticated = currentUser;
   });
 
-});
+}]);

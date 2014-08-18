@@ -23,7 +23,7 @@ There is already one user in the database with these credentials
 
 A retry queue is built in to the ```auth``` service which means if you try to navigate to a page that requires authentication
 you'll first be redirected to the login page. Once you've entered your creds you'll automatically be taken back to the page you
-originally tried to access. (*for some reason it's started to freeze the page, looking into it now*)
+originally tried to access.
 
 ### Testing websockets
 - Navigate to ```http://localhost:9000/chat```
