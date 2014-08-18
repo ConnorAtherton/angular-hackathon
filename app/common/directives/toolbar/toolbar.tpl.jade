@@ -1,5 +1,5 @@
 nav.navbar.navbar-default
-  .clearfix
+    a(ui-sref="home", ng-hide="isPage('home')") nghack
     ul.nav.navbar-nav.pull-right
       li(ng-show='isAuthenticated()')
         a(ng-click='logout()') Logout

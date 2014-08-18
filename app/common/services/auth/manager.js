@@ -108,10 +108,6 @@ angular.module('AuthManager', [
       });
     },
 
-    getAccounts: function () {
-      return api.isAuthenticated() ? api.currentUser.accounts : null;
-    },
-
     // stores state of the current user
     // and account details etc
     currentUser: null

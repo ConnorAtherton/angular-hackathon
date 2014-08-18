@@ -1,9 +1,12 @@
 @import "config/colours";
-@import "components/social_buttons";
-
+@import "partials/animations";
 @import "partials/navbar";
 @import "partials/buttons";
 @import "partials/forms";
 @import "partials/layout";
 @import "partials/login_forms";
+// @import "partials/aligner";
+@import "components/social_buttons";
+@import "components/chat";
+
 

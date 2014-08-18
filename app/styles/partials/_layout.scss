@@ -1,43 +1,4 @@
-@keyframes background-change {
-  from { background-position: 0 0; }
-    to { background-position: 100% 0; }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(75px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
+@import "states";
 
 html, body {
   height: 100%;
@@ -47,6 +8,8 @@ html, body {
 body {
   background-color: #F1F3F5;
   overflow: scroll;
+  color: rgba(0, 0, 0, 0.75);
+  @extend .clearfix;
 
   > header {
     position: relative;
@@ -64,26 +27,23 @@ body {
     }
     .background.no-auth {
       background: #0F1B58;
-      background-image: -webkit-radial-gradient(closest-corner,rgba(16, 47, 70, 0) 60%,rgba(16, 47, 70, 0.2)),-webkit-linear-gradient(108deg,#E5E9BF 10%,#00396F 90%);
+      background-image: radial-gradient(closest-corner,rgba(16, 47, 70, 0) 60%,rgba(16, 47, 70, 0.2)),-webkit-linear-gradient(108deg,#E5E9BF 10%,#00396F 90%);
       background-position: 0px 0px;
       background-repeat: repeat-x;
       animation: background-change 5s infinite;
     }
     .background.auth {
-      background: #0F1B58;
-      background-image: -webkit-radial-gradient(closest-corner,rgba(16, 47, 70, 0) 60%,rgba(16, 47, 70, 0.2)),-webkit-linear-gradient(108deg,#ff7a38,#E0A681 10%,#530343 90%);
+      background: #530343;
+      background-image:  radial-gradient(closest-corner,rgba(16, 47, 70, 0) 60%,rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg,#ff7a38,#E0A681 10%,#530343 90%);
       background-position: 0px 0px;
       background-repeat: repeat-x;
       animation: background-change 5s infinite;
     }
 
     .hero {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
 
       .contribute {
-        margin: auto;
+        margin: 0 auto 20px auto;
         padding: 60px 0;
 
         .twitter {
@@ -100,32 +60,19 @@ body {
       }
 
       .information {
-        padding: 60px;
         font-weight: 400;
         color: #ddd;
+        animation: fadeInAfter 1500ms;
+        animation-timing-function: ease-in-out;
       }
-    }
-
-    h1, h2, h3, h5 {
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-weight: 100;
     }
 
     h1 {
       font-weight: 500;
       font-size: 3.5em;
       margin: 0.5em 0;
-      animation: fadeInUp 1500ms;
-      animation-timing-function: cubic-bezier(0.165, 0.84, 0.2, 1);
     }
 
-    h3 {
-      animation: fadeInUp 1500ms;
-      animation-delay: 300ms;
-      animation-timing-function: cubic-bezier(0.1, 0.90, 0.4, 1);
-    }
   }
 
   .container {
@@ -133,6 +80,30 @@ body {
     padding: 0;
     width: 100%;
     border-top: 1px solid darken(#F1F3F5, 10%);
+  }
+}
+
+.hero {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+
+  h1, h2, h3, h5 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 100;
+  }
+
+  h1 {
+    animation: fadeInUp 1500ms;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.2, 1);
+  }
+
+  h3 {
+    animation: fadeInUp 1500ms;
+    animation-delay: 300ms;
+    animation-timing-function: cubic-bezier(0.1, 0.90, 0.4, 1);
   }
 }
 

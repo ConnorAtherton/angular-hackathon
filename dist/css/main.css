@@ -1,3 +1,340 @@
+@-webkit-keyframes background-change {
+  from {
+    background-position: 0 0; }
+
+  to {
+    background-position: 100% 0; } }
+
+@keyframes background-change {
+  from {
+    background-position: 0 0; }
+
+  to {
+    background-position: 100% 0; } }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(75px);
+    transform: translateY(75px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(75px);
+    transform: translateY(75px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeInAfter {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeInAfter {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.navbar {
+  width: 100%;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  margin-bottom: 0; }
+  .navbar .navbar-default {
+    background: transparent;
+    border: 0; }
+  .navbar .navbar-nav {
+    margin: 0; }
+  .navbar .navbar-nav > li {
+    float: left; }
+  .navbar .navbar-nav > li > a, .navbar a {
+    padding: 20px;
+    color: white;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-decoration: none; }
+    .navbar .navbar-nav > li > a:hover, .navbar a:hover {
+      color: #ddd;
+      cursor: pointer; }
+
+.btn {
+  border-radius: 3px;
+  margin: 8px 0;
+  padding: 10px 16px; }
+
+.btn-full {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 8px auto; }
+
+form.custom input {
+  -webkit-transition: background-color ease-in-out 200ms, border-color ease-in-out 200ms;
+  transition: background-color ease-in-out 200ms, border-color ease-in-out 200ms;
+  border-radius: 0;
+  font-size: 13px;
+  color: #333;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 50px;
+  border-left: 2px solid transparent;
+  padding: 0 20px; }
+  form.custom input:focus {
+    background-color: #f2f2f2;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+form.custom span {
+  display: block; }
+form.custom .control-label {
+  padding: 7px 0 3px 0; }
+form.custom [class*='ng-'], form.custom .error {
+  -webkit-transition: border-color ease-in-out 200ms;
+  transition: border-color ease-in-out 200ms; }
+form.custom .ng-dirty {
+  border-left: 2px solid #e85a5a; }
+form.custom .ng-valid {
+  border-left: 2px solid green; }
+form.custom .error, form.custom .errorMessage {
+  color: #E85A5A;
+  font-size: 12px;
+  padding-left: 19px; }
+form.custom .errorMessage {
+  padding: 0;
+  margin: 10px 0; }
+
+.state-chat {
+  width: 100%;
+  height: 100%; }
+
+html, body {
+  height: 100%;
+  font-family: 'Lato', sans-serif; }
+
+body {
+  background-color: #F1F3F5;
+  overflow: scroll;
+  color: rgba(0, 0, 0, 0.75); }
+  body > header {
+    position: relative;
+    padding-bottom: 50px;
+    min-height: 100%;
+    width: 100%; }
+    body > header > .background {
+      height: 100%;
+      width: 400%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -99999; }
+    body > header .background.no-auth {
+      background: #0F1B58;
+      background-image: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg, #E5E9BF 10%, #00396F 90%);
+      background-image: radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg, #E5E9BF 10%, #00396F 90%);
+      background-position: 0px 0px;
+      background-repeat: repeat-x;
+      -webkit-animation: background-change 5s infinite;
+      animation: background-change 5s infinite; }
+    body > header .background.auth {
+      background: #530343;
+      background-image: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg, #ff7a38, #E0A681 10%, #530343 90%);
+      background-image: radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg, #ff7a38, #E0A681 10%, #530343 90%);
+      background-position: 0px 0px;
+      background-repeat: repeat-x;
+      -webkit-animation: background-change 5s infinite;
+      animation: background-change 5s infinite; }
+    body > header .hero .contribute {
+      margin: 0 auto 20px auto;
+      padding: 60px 0; }
+      body > header .hero .contribute .twitter {
+        -webkit-animation: fadeInLeft 1500ms;
+        animation: fadeInLeft 1500ms;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+        -webkit-animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1);
+        animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1); }
+      body > header .hero .contribute .github {
+        -webkit-animation: fadeInRight 1500ms;
+        animation: fadeInRight 1500ms;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+        -webkit-animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1);
+        animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1); }
+    body > header .hero .information {
+      font-weight: 400;
+      color: #ddd;
+      -webkit-animation: fadeInAfter 1500ms;
+      animation: fadeInAfter 1500ms;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out; }
+    body > header h1 {
+      font-weight: 500;
+      font-size: 3.5em;
+      margin: 0.5em 0; }
+  body .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-top: 1px solid #d3d9e0; }
+
+.hero {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center; }
+  .hero h1, .hero h2, .hero h3, .hero h5 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 100; }
+  .hero h1 {
+    -webkit-animation: fadeInUp 1500ms;
+    animation: fadeInUp 1500ms;
+    -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.2, 1); }
+  .hero h3 {
+    -webkit-animation: fadeInUp 1500ms;
+    animation: fadeInUp 1500ms;
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.4, 1);
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.4, 1); }
+
+.col-center {
+  float: none !important;
+  margin: 0 auto; }
+
+.col-no-padding {
+  padding: 0; }
+
+.login, .register {
+  background-color: #ffffff;
+  margin-top: 50px;
+  border-radius: 3px;
+  border: 1px solid #d3d9e0;
+  padding-bottom: 20px;
+  max-width: 300px !important; }
+  .login header, .register header {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #d3d9e0;
+    padding: 15px 7px;
+    border-radius: 3px 3px 0 0;
+    text-align: center; }
+  .login input, .register input {
+    border: none;
+    margin: 0;
+    width: 100%; }
+  .login .form-bottom, .register .form-bottom {
+    padding: 0 22px; }
+  .login .info, .register .info {
+    font-size: 11px;
+    padding: 7px 0; }
+  .login .seperator, .register .seperator {
+    position: relative;
+    clear: both;
+    text-align: center;
+    padding: 4px 0; }
+    .login .seperator > span, .register .seperator > span {
+      color: #888;
+      display: inline-block;
+      position: relative;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid #EEE;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box; }
+      .login .seperator > span:after, .login .seperator > span:before, .register .seperator > span:after, .register .seperator > span:before {
+        position: absolute;
+        content: "";
+        left: 100%;
+        top: 50%;
+        width: 200%;
+        background: #EEE;
+        height: 1px; }
+      .login .seperator > span:before, .register .seperator > span:before {
+        left: auto;
+        right: 100%; }
+
 .btn:focus {
   outline: none; }
 
@@ -161,292 +498,61 @@
   .btn-reddit:active {
     background-color: #c73f00; }
 
-.navbar {
-  width: 100%;
-  border-radius: 0;
-  background: transparent;
-  border: none;
-  height: 60px;
-  line-height: 60px;
-  vertical-align: middle;
-  margin-bottom: 0; }
-  .navbar .navbar-default {
-    background: transparent;
-    border: 0; }
-  .navbar .navbar-nav {
-    margin: 0; }
-  .navbar .navbar-nav > li {
-    float: left; }
-  .navbar .navbar-nav > li > a {
-    padding: 20px;
-    color: white;
-    font-weight: 900;
-    font-size: 11px;
-    text-transform: uppercase; }
-    .navbar .navbar-nav > li > a:hover {
-      color: #ddd;
-      cursor: pointer; }
+.chat-info-wrap {
+  height: 100%; }
 
-.btn {
-  border-radius: 3px;
-  margin: 8px 0;
-  padding: 10px 16px; }
+.chat-hero {
+  color: #fff; }
+  .chat-hero .information {
+    padding: 80px 0;
+    -webkit-animation: fadeInAfter 1500ms;
+    animation: fadeInAfter 1500ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out; }
 
-.btn-full {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 8px auto; }
-
-form.custom input {
-  -webkit-transition: background-color ease-in-out 200ms, border-color ease-in-out 200ms;
-  transition: background-color ease-in-out 200ms, border-color ease-in-out 200ms;
-  border-radius: 0;
-  font-size: 13px;
-  color: #333;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  height: 50px;
-  border-left: 2px solid transparent;
-  padding: 0 19px; }
-  form.custom input:focus {
-    background-color: #f2f2f2;
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-form.custom span {
-  display: block; }
-form.custom .control-label {
-  padding: 7px 0 3px 0; }
-form.custom [class*='ng-'], form.custom .error {
-  -webkit-transition: border-color ease-in-out 200ms;
-  transition: border-color ease-in-out 200ms; }
-form.custom .ng-dirty {
-  border-left: 2px solid #e85a5a; }
-form.custom .ng-valid {
-  border-left: 2px solid green; }
-form.custom .error, form.custom .errorMessage {
-  color: #E85A5A;
-  font-size: 12px;
-  padding-left: 7px; }
-form.custom .errorMessage {
-  padding: 0;
-  margin: 10px 0; }
-
-@-webkit-keyframes background-change {
-  from {
-    background-position: 0 0; }
-
-  to {
-    background-position: 100% 0; } }
-
-@keyframes background-change {
-  from {
-    background-position: 0 0; }
-
-  to {
-    background-position: 100% 0; } }
-
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(75px);
-    transform: translateY(75px); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none; } }
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(75px);
-    transform: translateY(75px); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none; } }
-
-@-webkit-keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none; } }
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none; } }
-
-@-webkit-keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100px);
-    transform: translateX(100px); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none; } }
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100px);
-    transform: translateX(100px); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none; } }
-
-html, body {
+#chat-info {
+  float: left;
   height: 100%;
-  font-family: 'Lato', sans-serif; }
+  width: 100%;
+  background-image: -webkit-radial-gradient(closest-corner, rgba(0, 0, 0, 0) 90%, rgba(44, 39, 17, 0.1)), -webkit-linear-gradient(300deg, #6a99f0 10%, #6af0ec 90%);
+  background-image: radial-gradient(closest-corner, rgba(0, 0, 0, 0) 90%, rgba(44, 39, 17, 0.1)), linear-gradient(150deg, #6a99f0 10%, #6af0ec 90%); }
 
-body {
-  background-color: #F1F3F5;
-  overflow: scroll; }
-  body > header {
-    position: relative;
-    padding-bottom: 50px;
-    min-height: 100%;
-    width: 100%; }
-    body > header > .background {
-      height: 100%;
-      width: 400%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: -99999; }
-    body > header .background.no-auth {
-      background: #0F1B58;
-      background-image: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg, #E5E9BF 10%, #00396F 90%);
-      background-position: 0px 0px;
-      background-repeat: repeat-x;
-      -webkit-animation: background-change 5s infinite;
-      animation: background-change 5s infinite; }
-    body > header .background.auth {
-      background: #0F1B58;
-      background-image: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.2)), -webkit-linear-gradient(108deg, #ff7a38, #E0A681 10%, #530343 90%);
-      background-position: 0px 0px;
-      background-repeat: repeat-x;
-      -webkit-animation: background-change 5s infinite;
-      animation: background-change 5s infinite; }
-    body > header .hero {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center; }
-      body > header .hero .contribute {
-        margin: auto;
-        padding: 60px 0; }
-        body > header .hero .contribute .twitter {
-          -webkit-animation: fadeInLeft 1500ms;
-          animation: fadeInLeft 1500ms;
-          -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-          -webkit-animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1);
-          animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1); }
-        body > header .hero .contribute .github {
-          -webkit-animation: fadeInRight 1500ms;
-          animation: fadeInRight 1500ms;
-          -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-          -webkit-animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1);
-          animation-timing-function: cubic-bezier(0.1, 1, 0.6, 1); }
-      body > header .hero .information {
-        padding: 60px;
-        font-weight: 400;
-        color: #ddd; }
-    body > header h1, body > header h2, body > header h3, body > header h5 {
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-weight: 100; }
-    body > header h1 {
-      font-weight: 500;
-      font-size: 3.5em;
-      margin: 0.5em 0;
-      -webkit-animation: fadeInUp 1500ms;
-      animation: fadeInUp 1500ms;
-      -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.2, 1);
-      animation-timing-function: cubic-bezier(0.165, 0.84, 0.2, 1); }
-    body > header h3 {
-      -webkit-animation: fadeInUp 1500ms;
-      animation: fadeInUp 1500ms;
-      -webkit-animation-delay: 300ms;
-      animation-delay: 300ms;
-      -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.4, 1);
-      animation-timing-function: cubic-bezier(0.1, 0.9, 0.4, 1); }
-  body .container {
-    margin: 0;
-    padding: 0;
+#chat-window {
+  position: relative;
+  height: 100%; }
+  #chat-window #messages {
+    height: 80%;
     width: 100%;
-    border-top: 1px solid #d3d9e0; }
-
-.col-center {
-  float: none !important;
-  margin: 0 auto; }
-
-.col-no-padding {
-  padding: 0; }
-
-.login, .register {
-  background-color: #ffffff;
-  margin-top: 50px;
-  border-radius: 3px;
-  border: 1px solid #d3d9e0;
-  padding-bottom: 20px;
-  max-width: 300px !important; }
-  .login header, .register header {
-    background-color: #f2f2f2;
-    border-bottom: 1px solid #d3d9e0;
-    padding: 15px 7px;
-    border-radius: 3px 3px 0 0;
-    text-align: center; }
-  .login input, .register input {
-    border: none;
-    margin: 0;
-    width: 100%; }
-  .login .form-bottom, .register .form-bottom {
-    padding: 0 22px; }
-  .login .info, .register .info {
-    font-size: 11px;
-    padding: 7px 0; }
-  .login .seperator, .register .seperator {
-    position: relative;
-    clear: both;
-    text-align: center;
-    padding: 4px 0; }
-    .login .seperator > span, .register .seperator > span {
-      color: #888;
-      display: inline-block;
-      position: relative;
-      padding: 5px 9px;
-      border-radius: 999px;
-      border: 1px solid #EEE;
-      -webkit-background-clip: padding-box;
-      background-clip: padding-box; }
-      .login .seperator > span:after, .login .seperator > span:before, .register .seperator > span:after, .register .seperator > span:before {
-        position: absolute;
-        content: "";
-        left: 100%;
-        top: 50%;
-        width: 200%;
-        background: #EEE;
-        height: 1px; }
-      .login .seperator > span:before, .register .seperator > span:before {
-        left: auto;
-        right: 100%; }
+    padding: 20px;
+    overflow-y: scroll; }
+    #chat-window #messages ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+      #chat-window #messages ul li {
+        padding: 10px 0; }
+        #chat-window #messages ul li > span {
+          font-size: 11px;
+          text-transform: uppercase;
+          color: #ADAAAA;
+          padding-left: 20px; }
+  #chat-window form {
+    width: 100%;
+    height: 20%;
+    max-height: 20%;
+    padding: 0 20px;
+    overflow: none;
+    border-top: 1px solid #dedede;
+    background: white;
+    button-position: absolute;
+    button-top: 0;
+    button-right: 0;
+    button-width: 100% !important; }
+    #chat-window form > textarea {
+      border: none;
+      width: 100%;
+      height: 100%;
+      padding-top: 10px;
+      outline: none;
+      overflow-y: scroll;
+      resize: none; }

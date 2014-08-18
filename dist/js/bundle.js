@@ -26033,13 +26033,22 @@ angular.module('cfp.loadingBar', [])
   });       // wtf javascript. srsly
 })();       //
 
-angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("404.tpl.html","<div class=\"centered col-8-12\"><h3>The page you were looking for doesn\'t exist.</h3></div>");
-$templateCache.put("about.tpl.html","<hr/><i>This is the about page</i><hr/>");
+/*
+ * @license
+ * angular-socket-io v0.6.0
+ * (c) 2014 Brian Ford http://briantford.com
+ * License: MIT
+ */
+angular.module("btford.socket-io",[]).provider("socketFactory",function(){"use strict";var n="socket:";this.$get=["$rootScope","$timeout",function(t,e){var o=function(n,t){return t?function(){var o=arguments;e(function(){t.apply(n,o)},0)}:angular.noop};return function(e){e=e||{};var r=e.ioSocket||io.connect(),u=e.prefix||n,c=e.scope||t,i=function(n,t){r.on(n,t.__ng=o(r,t))},a=function(n,t){r.once(n,t.__ng=o(r,t))},s={on:i,addListener:i,once:a,emit:function(n,t,e){var u=arguments.length-1,e=arguments[u];return"function"==typeof e&&(e=o(r,e),arguments[u]=e),r.emit.apply(r,arguments)},removeListener:function(n,t){return t&&t.__ng&&(arguments[1]=t.__ng),r.removeListener.apply(r,arguments)},removeAllListeners:function(){return r.removeAllListeners.apply(r,arguments)},disconnect:function(n){return r.disconnect(n)},forward:function(n,t){n instanceof Array==!1&&(n=[n]),t||(t=c),n.forEach(function(n){var e=u+n,c=o(r,function(n){t.$broadcast(e,n)});t.$on("$destroy",function(){r.removeListener(n,c)}),r.on(n,c)})}};return s}}]});
+angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("chat/chat.tpl.html","<section class=\"chat-info-wrap col-xs-12 col-md-8 col-no-padding\"><section id=\"chat-info\"><login-toolbar></login-toolbar><div class=\"hero chat-hero\"><h3>Angular chat room, such wow</h3><div class=\"information\"><div class=\"col-xs-12 col-sm-6\"><p>Open another browser window and type messages in\nthe box on the right to see websockets in action.</p><p>Use websockets on the client in your controllers by injecting the\nsocket factory and interact with socket.io how you normally would.</p></div><div class=\"col-xs-12 col-sm-6\">Show some code about how to inject socket into controller.\n\n</div></div></div></section></section><section id=\"chat-window\" class=\"col-xs-12 col-md-4 col-no-padding\"><aside id=\"messages\"><ul ng-repeat=\"message in messages\"><li>{{message.body}}<span>{{message.time | date: \'shortTime\'}}</span></li></ul></aside><form><textarea ng-model=\"message\" enter-submit=\"sendMessage()\" name=\"message\" required=\"required\" placeholder=\"Type a short message here (enter to send)\"></textarea><button ng-disabled=\"messageForm.$invalid\" type=\"submit\" ng-click=\"sendMessage()\" class=\"btn btn-default btn-full hide\">Send</button></form></section>");
+$templateCache.put("404.tpl.html","<div class=\"centered col-8-12\"><h3>The page you were looking for doesn\'t exist.</h3></div>");
+$templateCache.put("about.tpl.html","<i>This is the about page</i>");
 $templateCache.put("home.tpl.html","");
-$templateCache.put("directives/toolbar/toolbar.tpl.html","<nav class=\"navbar navbar-default\"><div class=\"clearfix\"><ul class=\"nav navbar-nav pull-right\"><li ng-show=\"isAuthenticated()\"><a ng-click=\"logout()\">Logout</a></li><li ng-hide=\"isAuthenticated() || isPage(&quot;login&quot;)\"><a ui-sref=\"login\">Login</a></li><li ng-hide=\"isAuthenticated() || isPage(&quot;register&quot;)\"><a ui-sref=\"register\">Register</a></li></ul></div></nav>");
+$templateCache.put("directives/toolbar/toolbar.tpl.html","<nav class=\"navbar navbar-default\"><a ui-sref=\"home\" ng-hide=\"isPage(\'home\')\">nghack</a><ul class=\"nav navbar-nav pull-right\"><li ng-show=\"isAuthenticated()\"><a ng-click=\"logout()\">Logout</a></li><li ng-hide=\"isAuthenticated() || isPage(&quot;login&quot;)\"><a ui-sref=\"login\">Login</a></li><li ng-hide=\"isAuthenticated() || isPage(&quot;register&quot;)\"><a ui-sref=\"register\">Register</a></li></ul></nav>");
 $templateCache.put("services/auth/login/login.tpl.html","<section class=\"login col-sm-4 col-xs-12 col-center col-no-padding\"><header>Login</header><form ng-submit=\"login()\" name=\"loginForm\" role=\"form\" class=\"custom\"><label for=\"email\" class=\"control-label col-sm-2 hide\">Email</label><input ng-model=\"user.email\" ng-model-options=\"{ updateOn: \'blur\' }\" name=\"email\" type=\"email\" placeholder=\"Email\" required=\"required\" autofocus=\"true\" class=\"form-control\"/><span ng-show=\"loginForm.email.$error.email &amp;&amp; !loginForm.email.$pristine\" class=\"error\">Please enter a valid email.</span><label for=\"password\" class=\"control-label col-sm-2 hide\">Password</label><input ng-model=\"user.password\" ng-model-options=\"{ updateOn: \'blur\' }\" type=\"password\" name=\"password\" ng-minlength=\"6\" placeholder=\"Password\" required=\"required\" class=\"form-control\"/><span ng-show=\"loginForm.password.$error.minlength\" class=\"error\">Your password must be greater than 6 characters.</span><div class=\"form-bottom\"><p ng-bind=\"message\" class=\"errorMessage\"></p><button ng-disabled=\"loginForm.$invalid\" type=\"submit\" class=\"btn btn-default btn-full\">Log in</button><div class=\"info clearfix\"><a href=\"#\" class=\"pull-right\">Register</a><a href=\"#\" class=\"pull-left\">Rescue password</a></div></div><div class=\"seperator\"><span>or</span></div><div class=\"form-bottom\"><div ng-click=\"loginWith(&quot;facebook&quot;)\" class=\"btn btn-social btn-facebook btn-full\">Login with facebook</div><div ng-click=\"loginWith(&quot;twitter&quot;)\" class=\"btn btn-social btn-twitter btn-full\">Login with twitter</div><div ng-click=\"loginWith(&quot;google&quot;)\" class=\"btn btn-social btn-google btn-full\">Login with google</div></div></form></section>");
 $templateCache.put("services/auth/register/register.tpl.html","<section class=\"register col-sm-4 col-xs-12 col-center col-no-padding\"><header>Register</header><form ng-submit=\"register()\" name=\"registerForm\" role=\"form\" class=\"custom\"><label for=\"name\" class=\"control-label col-sm-2 hide\">Name</label><input ng-model=\"user.fullName\" ng-model-options=\"{ debounce: 300, updateOn: \'blur\' }\" name=\"name\" type=\"text\" placeholder=\"Full name\" required=\"required\" autofocus=\"true\" class=\"form-control\"/><span ng-show=\"registerForm.name.$error.required &amp;&amp; !registerForm.name.$pristine\" class=\"error\">Please enter your full name.</span><label for=\"email\" class=\"control-label col-sm-2 hide\">Email</label><input ng-model=\"user.email\" ng-model-options=\"{ updateOn: \'blur\' }\" name=\"email\" type=\"email\" placeholder=\"Email\" required=\"required\" class=\"form-control\"/><span ng-show=\"registerForm.email.$error.email\" class=\"error\">Please enter a valid email.</span><label for=\"password\" class=\"control-label col-sm-2 hide\">Password</label><input ng-model=\"user.password\" ng-model-options=\"{ updateOn: \'blur\' }\" type=\"password\" name=\"password\" ng-minlength=\"6\" placeholder=\"Password\" required=\"required\" class=\"form-control\"/><span ng-show=\"registerForm.password.$error.minlength\" class=\"error\">Your password must be greater than 6 characters.</span><div class=\"form-bottom\"><p ng-bind=\"message\" class=\"errorMessage\"></p><button ng-disabled=\"registerForm.$invalid\" type=\"submit\" class=\"btn btn-default btn-full\">Register</button></div><div class=\"seperator\"><span>or</span></div><div class=\"form-bottom\"><div ng-click=\"loginWith(&quot;facebook&quot;)\" class=\"btn btn-social btn-facebook btn-full\">Register with facebook</div><div ng-click=\"loginWith(&quot;twitter&quot;)\" class=\"btn btn-social btn-twitter btn-full\">Register with twitter</div><div ng-click=\"loginWith(&quot;google&quot;)\" class=\"btn btn-social btn-google btn-full\">Register with google</div></div></form></section>");}]);
 angular.module('nghack', [
+  'btford.socket-io',
   'templates',
   'ui.router',
   'ui.bootstrap',
@@ -26047,6 +26056,8 @@ angular.module('nghack', [
 
   'Directives',
   'Services',
+
+  'Chat'
 ])
 
 .config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
@@ -26058,17 +26069,13 @@ angular.module('nghack', [
     .state('home', {
       url: "/",
       templateUrl: "home.tpl.html",
-      resolve: {
-        redirect: function (AuthManager) {
-          // return AuthManager.redirectIfAuthenticated('console');
-        }
-      }
     })
     .state('about', {
       url: "/about",
       templateUrl: "about.tpl.html",
       resolve: {
-        auth: function (AuthManager) {
+        auth: function(AuthManager) {
+          console.log('Auth', AuthManager);
           return AuthManager.requireAuthenticatedUser('about');
         }
       }
@@ -26085,7 +26092,7 @@ angular.module('nghack', [
       templateUrl: "404.tpl.html",
     });
 
-  $httpProvider.interceptors.push(function ($q, $location, $rootScope) {
+  $httpProvider.interceptors.push(function($q, $location, $rootScope) {
     return {
       'responseError': function (response) {
         if (response.status === 401 || response.status === 403) {
@@ -26098,18 +26105,31 @@ angular.module('nghack', [
   });
 })
 
-.run(function ($rootScope, AuthManager) {
+.run(function($rootScope, $state, AuthManager) {
   // Check to see if a user is already logged in
   // from a previous session.
   AuthManager.requestCurrentUser();
+  // add class to ui-view based on current state
+  $rootScope.currentAppClass = 'state-' + $state.current;
+
+  $rootScope.$watch(function () {
+    return $state.current;
+  }, function(current) {
+    $rootScope.currentAppClass = 'state-' + current.name;
+  });
+
 })
 
 .controller('AppCtrl', function AppCtrl($scope, $state, AuthManager) {
 
   $scope.authenticated = AuthManager.isAuthenticated;
 
-  $scope.isPage = function (page) {
+  $scope.isPage = function(page) {
     return $state.is(page);
+  };
+
+  $scope.getState = function() {
+    return $state.current();
   };
 
   $scope.$watch(function () {
@@ -26122,7 +26142,8 @@ angular.module('nghack', [
 
 angular.module('Directives', [
   'toolbar',
-  'Gravatar'
+  'Gravatar',
+  'forms'
 ]);
 
 angular.module('Gravatar', [])
@@ -26371,8 +26392,65 @@ angular.module('Gravatar', [])
 });
 
 angular.module('Services', [
-  'AuthService'
+  'AuthService',
+  'SocketFactory'
 ]);
+
+angular.module('SocketFactory', [])
+
+.factory('socket', function(socketFactory) {
+  return socketFactory();
+});
+
+angular.module('Chat', [])
+
+.config(function($stateProvider) {
+
+  $stateProvider
+    .state('chat', {
+      url: '/chat',
+      controller: 'ChatCtrl',
+      templateUrl: 'chat/chat.tpl.html'
+    });
+})
+
+.controller('ChatCtrl', ['$scope', 'socket', function ($scope, socket) {
+
+  $scope.messages = [];
+
+  $scope.sendMessage = function() {
+    socket.emit('message', $scope.message);
+    $scope.message = '';
+  };
+
+  socket.on('message:new', function(msg) {
+    $scope.messages.push(msg);
+  });
+
+}]);
+
+angular.module('forms', [
+
+])
+
+.directive('enterSubmit', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attrs) {
+
+      elem.bind('keydown', function(event) {
+        var code = event.keyCode || event.which;
+
+        if (code === 13) {
+          if (!event.shiftKey) {
+            event.preventDefault();
+            scope.$apply(attrs.enterSubmit);
+          }
+        }
+      });
+    }
+  };
+});
 
 angular.module('toolbar', [
   'AuthManager'
@@ -26528,10 +26606,6 @@ angular.module('AuthManager', [
       });
     },
 
-    getAccounts: function () {
-      return api.isAuthenticated() ? api.currentUser.accounts : null;
-    },
-
     // stores state of the current user
     // and account details etc
     currentUser: null
@@ -26542,7 +26616,7 @@ angular.module('AuthManager', [
 
 angular.module('RetryQueue', [])
 
-// This is a generic retry queue for security failures.  Each item is expected to expose two functions: retry and cancel.
+// This is a generic retry queue for security failures. Each item is expected to expose two functions: retry and cancel.
 .factory('RetryQueue', ['$q', '$log',
   function($q, $log) {
     var retryQueue = [];
@@ -26551,6 +26625,7 @@ angular.module('RetryQueue', [])
       onItemAddedCallbacks: [],
 
       hasMore: function() {
+        console.log('hasmore ',retryQueue.length > 0);
         return retryQueue.length > 0;
       },
       push: function(retryItem) {
@@ -26607,7 +26682,9 @@ angular.module('RetryQueue', [])
       },
       retryAll: function() {
         while (service.hasMore()) {
+          console.log('retrying', retryQueue);
           retryQueue.shift().retry();
+          retryQueue = [];
         }
       }
     };

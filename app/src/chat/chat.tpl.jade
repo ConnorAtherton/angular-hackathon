@@ -1,0 +1,26 @@
+section.chat-info-wrap.col-xs-12.col-md-8.col-no-padding
+  section#chat-info
+    login-toolbar
+    .hero.chat-hero
+      h3 Angular chat room, such wow
+      .information
+        .col-xs-12.col-sm-6
+          p.
+            Open another browser window and type messages in
+            the box on the right to see websockets in action.
+          p.
+            Use websockets on the client in your controllers by injecting the
+            socket factory and interact with socket.io how you normally would.
+        .col-xs-12.col-sm-6.
+          Show some code about how to inject socket into controller.
+
+
+section#chat-window.col-xs-12.col-md-4.col-no-padding
+  aside#messages
+    ul(ng-repeat="message in messages")
+      li {{message.body}}
+        span {{message.time | date: 'shortTime'}}
+
+  form
+    textarea(ng-model="message", enter-submit="sendMessage()" , name="message", required, placeholder="Type a short message here (enter to send)")
+    button.btn.btn-default.btn-full.hide(ng-disabled="messageForm.$invalid", type="submit", ng-click='sendMessage()') Send

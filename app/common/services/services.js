@@ -1,3 +1,4 @@
 angular.module('Services', [
-  'AuthService'
+  'AuthService',
+  'SocketFactory'
 ]);

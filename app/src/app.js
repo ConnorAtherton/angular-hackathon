@@ -1,4 +1,5 @@
 angular.module('nghack', [
+  'btford.socket-io',
   'templates',
   'ui.router',
   'ui.bootstrap',
@@ -6,6 +7,8 @@ angular.module('nghack', [
 
   'Directives',
   'Services',
+
+  'Chat'
 ])
 
 .config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
@@ -17,17 +20,13 @@ angular.module('nghack', [
     .state('home', {
       url: "/",
       templateUrl: "home.tpl.html",
-      resolve: {
-        redirect: function (AuthManager) {
-          // return AuthManager.redirectIfAuthenticated('console');
-        }
-      }
     })
     .state('about', {
       url: "/about",
       templateUrl: "about.tpl.html",
       resolve: {
-        auth: function (AuthManager) {
+        auth: function(AuthManager) {
+          console.log('Auth', AuthManager);
           return AuthManager.requireAuthenticatedUser('about');
         }
       }
@@ -44,7 +43,7 @@ angular.module('nghack', [
       templateUrl: "404.tpl.html",
     });
 
-  $httpProvider.interceptors.push(function ($q, $location, $rootScope) {
+  $httpProvider.interceptors.push(function($q, $location, $rootScope) {
     return {
       'responseError': function (response) {
         if (response.status === 401 || response.status === 403) {
@@ -57,18 +56,31 @@ angular.module('nghack', [
   });
 })
 
-.run(function ($rootScope, AuthManager) {
+.run(function($rootScope, $state, AuthManager) {
   // Check to see if a user is already logged in
   // from a previous session.
   AuthManager.requestCurrentUser();
+  // add class to ui-view based on current state
+  $rootScope.currentAppClass = 'state-' + $state.current;
+
+  $rootScope.$watch(function () {
+    return $state.current;
+  }, function(current) {
+    $rootScope.currentAppClass = 'state-' + current.name;
+  });
+
 })
 
 .controller('AppCtrl', function AppCtrl($scope, $state, AuthManager) {
 
   $scope.authenticated = AuthManager.isAuthenticated;
 
-  $scope.isPage = function (page) {
+  $scope.isPage = function(page) {
     return $state.is(page);
+  };
+
+  $scope.getState = function() {
+    return $state.current();
   };
 
   $scope.$watch(function () {

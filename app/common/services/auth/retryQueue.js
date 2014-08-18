@@ -1,6 +1,6 @@
 angular.module('RetryQueue', [])
 
-// This is a generic retry queue for security failures.  Each item is expected to expose two functions: retry and cancel.
+// This is a generic retry queue for security failures. Each item is expected to expose two functions: retry and cancel.
 .factory('RetryQueue', ['$q', '$log',
   function($q, $log) {
     var retryQueue = [];
@@ -9,6 +9,7 @@ angular.module('RetryQueue', [])
       onItemAddedCallbacks: [],
 
       hasMore: function() {
+        console.log('hasmore ',retryQueue.length > 0);
         return retryQueue.length > 0;
       },
       push: function(retryItem) {
@@ -65,7 +66,9 @@ angular.module('RetryQueue', [])
       },
       retryAll: function() {
         while (service.hasMore()) {
+          console.log('retrying', retryQueue);
           retryQueue.shift().retry();
+          retryQueue = [];
         }
       }
     };

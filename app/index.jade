@@ -2,10 +2,9 @@ doctype html
 html(lang="en", ng-app="nghack")
   head
     title(ng-bind="pageTitle") Angular hackathon
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:100,400,700,900')
-    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
-    link(rel="stylesheet", href="/css/main.css")
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:100,400,900')
     link(rel="stylesheet", href="/css/vendor.css")
+    link(rel="stylesheet", href="/css/main.css")
   body(ng-controller='AppCtrl')
     header(ng-show='isPage("home")')
       login-toolbar
@@ -13,15 +12,15 @@ html(lang="en", ng-app="nghack")
       .hero(ng-hide='authenticated')
         h1 nghack
         h3 An opinionated node boilerplate for angular applications.
-        .contribute
-          .twitter.col-xs-6.col-sm-3.col-sm-offset-3
-            a(href="https://twitter.com/share" class="twitter-share-button" data-url="https://github.com/ConnorAtherton/angular-hackathon/" data-via="ConnorAtherton6") Tweet
-          .github.col-xs-6.col-sm-3
-            a(href="https://github.com/ConnorAtherton/angular-hackathon", class="github-button", data-icon="octicon-star", data-count-href="/ConnorAtherton/angular-hackathon/stargazers", data-count-api="/repos/ConnorAtherton/angular-hackathon#stargazers_count") Star nghack
         .information
+          .contribute
+            .twitter.col-xs-6.col-sm-3.col-sm-offset-3
+              a(href="https://twitter.com/share" class="twitter-share-button" data-url="https://github.com/ConnorAtherton/angular-hackathon/" data-via="ConnorAtherton6") Tweet
+            .github.col-xs-6.col-sm-3
+              a(href="https://github.com/ConnorAtherton/angular-hackathon", class="github-button", data-icon="octicon-star", data-count-href="/ConnorAtherton/angular-hackathon/stargazers", data-count-api="/repos/ConnorAtherton/angular-hackathon#stargazers_count") Star nghack
           .col-xs-12.col-sm-4
             p.
-              Authentication right out of the box, including easily customisable oauth logins
+              Authentication right out of the box. With easily customisable oauth logins
               to fit your needs.
           .col-xs-12.col-sm-4
             p.
@@ -33,9 +32,10 @@ html(lang="en", ng-app="nghack")
       .hero(ng-show='authenticated')
         h3 You are now authenticated.
 
-    section(ui-view class="container")
+    section(ui-view class="container" ng-class="currentAppClass")
 
     script(async src="//platform.twitter.com/widgets.js")
     script(async defer id="github-bjs" src="https://buttons.github.io/buttons.js")
+    script(src="/socket.io/socket.io.js")
     script(src="/js/bundle.js")
 

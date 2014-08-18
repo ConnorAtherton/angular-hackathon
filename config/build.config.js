@@ -62,9 +62,11 @@ module.exports = {
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-loading-bar/src/loading-bar.js',
-      'vendor/angular-ui-utils/modules/route/route.js'
+      'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/angular-socket-io/socket.min.js'
     ],
     css: [
+      'vendor/bootstrap/dist/css/bootstrap.css',
       'vendor/angular-loading-bar/src/loading-bar.css'
     ],
     assets: []

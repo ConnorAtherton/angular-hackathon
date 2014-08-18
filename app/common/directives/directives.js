@@ -1,4 +1,5 @@
 angular.module('Directives', [
   'toolbar',
-  'Gravatar'
+  'Gravatar',
+  'forms'
 ]);
