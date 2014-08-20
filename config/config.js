@@ -8,6 +8,7 @@ module.exports = {
   },
 
   db: {
+    connection: process.env.MONGODB || 'mongodb://localhost:27017/test'
     // salt: 'supersecretsalt'
   }
 }

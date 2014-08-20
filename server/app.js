@@ -1,5 +1,4 @@
 var passport = require('passport');
-var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
@@ -15,7 +14,6 @@ var app = module.exports = express();
 //
 // Middleware (remember that order matters!)
 //
-app.use(morgan(':remote-addr :method :url'));
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(express.static(config.dist));
