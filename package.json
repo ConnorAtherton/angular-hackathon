@@ -29,7 +29,8 @@
     "gulp-jade": "~0.6.1",
     "gulp-uglify": "~0.3.1",
     "reload": "~0.1.0",
-    "jshint-stylish": "~0.4.0"
+    "jshint-stylish": "~0.4.0",
+    "karma-chrome-launcher": "~0.1.4"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -51,6 +52,7 @@
     "passport-facebook": "~1.0.3",
     "passport-twitter": "~1.0.2",
     "passport-google": "~0.3.0",
-    "socket.io": "~1.0.6"
+    "socket.io": "~1.0.6",
+    "passport-local": "~1.0.0"
   }
 }

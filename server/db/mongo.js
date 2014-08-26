@@ -1,11 +1,12 @@
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var user = require('./seed');
+var connection = require('../../config/config').db.connection;
 var db = null;
 
 var Mongo = {
   connect: function() {
-    mongoose.connect('mongodb://localhost:27017/test');
+    mongoose.connect(connection);
     db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function() {

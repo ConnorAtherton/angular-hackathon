@@ -11,7 +11,8 @@ angular.module('nghack', [
   'Chat'
 ])
 
-.config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider',
+    function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
   $urlRouterProvider.otherwise('/404');
   $locationProvider.html5Mode(true);
@@ -52,7 +53,7 @@ angular.module('nghack', [
       }
     };
   });
-})
+}])
 
 .run(function($rootScope, $state, AuthManager) {
   // Check to see if a user is already logged in

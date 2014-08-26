@@ -9,6 +9,7 @@
 - ```cd server``` then ```node app``` to start the server
 - Run ```mongod``` in a separate shell to start mongo
 - In a new shell again run ```gulp``` to build and watch for changes (**this is buggy, see TODO below**)
+- In another shell again run ```karma start``` to watch and run the tests
 
 ## Undocumented features
 I'm still building out the project so it doesn't link together properly quite yet. Here are some things

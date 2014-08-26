@@ -6266,9 +6266,8 @@ button.close {
   display: block;
   position: fixed;
   z-index: 10002;
-  top: 18px;
-  left: 0;
-  margin-left: 50%;
+  top: 10px;
+  left: 10px;
 }
 
 #loading-bar-spinner .spinner-icon {
